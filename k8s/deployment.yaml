@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: crm-ai
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: crm-ai
+  template:
+    metadata:
+      labels:
+        app: crm-ai
+    spec:
+      imagePullSecrets:
+        - name: do-registry-secret
+      containers:
+      - name: crm-ai
+        image: registry.digitalocean.com/zlregistry/crm-ai:${BUILD_NUMBER}
+        imagePullPolicy: Always
+        volumeMounts:
+          - name: env-volume
+            mountPath: /app/.env
+            subPath: .env
+        ports:
+        - containerPort: 8000
+      volumes:
+        - name: env-volume
+          configMap:
+            name: crm-ai-env

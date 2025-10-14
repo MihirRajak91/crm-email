@@ -1,0 +1,664 @@
+2025-09-23 11:10:39,960 - crm - INFO - Connecting to MongoDB at: mongodb://192.168.1.72:27017/chat_db
+2025-09-23 11:10:39,962 - crm - INFO - Successfully connected to MongoDB.
+2025-09-23 11:10:41,425 - crm - ERROR - Waiting for Qdrant (192.168.1.72:6333)... attempt 1/10
+2025-09-23 11:10:43,426 - crm - ERROR - Waiting for Qdrant (192.168.1.72:6333)... attempt 2/10
+2025-09-23 11:10:45,426 - crm - ERROR - Waiting for Qdrant (192.168.1.72:6333)... attempt 3/10
+2025-09-23 11:10:47,426 - crm - ERROR - Waiting for Qdrant (192.168.1.72:6333)... attempt 4/10
+2025-09-23 11:14:16,332 - crm - INFO - Connecting to MongoDB at: mongodb://192.168.1.72:27017/chat_db
+2025-09-23 11:14:16,371 - crm - INFO - Successfully connected to MongoDB.
+2025-09-23 11:14:17,167 - crm - ERROR - Waiting for Qdrant (192.168.1.72:6333)... attempt 1/10
+2025-09-23 11:14:19,169 - crm - ERROR - Waiting for Qdrant (192.168.1.72:6333)... attempt 2/10
+2025-09-23 11:14:21,172 - crm - ERROR - Waiting for Qdrant (192.168.1.72:6333)... attempt 3/10
+2025-09-23 11:14:23,176 - crm - ERROR - Waiting for Qdrant (192.168.1.72:6333)... attempt 4/10
+2025-09-23 11:14:25,178 - crm - ERROR - Waiting for Qdrant (192.168.1.72:6333)... attempt 5/10
+2025-09-23 11:14:27,179 - crm - ERROR - Waiting for Qdrant (192.168.1.72:6333)... attempt 6/10
+2025-09-23 11:14:29,181 - crm - ERROR - Waiting for Qdrant (192.168.1.72:6333)... attempt 7/10
+2025-09-23 11:14:31,184 - crm - ERROR - Waiting for Qdrant (192.168.1.72:6333)... attempt 8/10
+2025-09-23 11:14:33,188 - crm - ERROR - Waiting for Qdrant (192.168.1.72:6333)... attempt 9/10
+2025-09-23 11:14:35,189 - crm - ERROR - Waiting for Qdrant (192.168.1.72:6333)... attempt 10/10
+2025-09-23 11:15:22,813 - crm - INFO - Connecting to MongoDB at: mongodb://192.168.1.72:27017/chat_db
+2025-09-23 11:15:22,816 - crm - INFO - Successfully connected to MongoDB.
+2025-09-23 11:15:23,569 - crm - INFO - Qdrant is reachable at 192.168.1.72:6333
+2025-09-23 11:15:23,739 - crm - INFO - Collection 'CRM_zeta_documents_openai' already exists.
+2025-09-23 11:15:23,742 - crm - INFO - Project root directory: /home/zeta/Documents/zetalabs_projects/crm-ai/crm
+2025-09-23 11:15:23,755 - crm - INFO - Loading LLM provider: openai
+2025-09-23 11:15:25,126 - crm - INFO - OpenAI API KEY: sk-proj-h7... and model name gpt-3.5-turbo
+2025-09-23 11:15:25,126 - crm - INFO - Connecting to OpenAI using model gpt-3.5-turbo ...
+2025-09-23 11:15:25,462 - crm - INFO - Using OpenAI LLM
+2025-09-23 11:15:25,464 - crm - INFO - USE OPENAI: True
+2025-09-23 11:15:25,464 - crm - INFO - [Embedder Init] model=text-embedding-3-small use_openai=True
+2025-09-23 11:15:25,488 - crm - INFO - [Embedder] Using OpenAI model: text-embedding-3-small
+2025-09-23 11:15:25,882 - crm - INFO - Connecting to Ollama at http://192.168.1.72:11434 using model llama3.1 ...
+2025-09-23 11:15:30,065 - crm - INFO - Ollama responded: I'm an artificial intelligence model known as Llama. Llama s...
+2025-09-23 11:15:30,078 - crm - INFO - Starting up the application...
+2025-09-23 11:15:30,125 - crm - INFO - Connecting to Ollama at http://192.168.1.72:11434 using model llama3.1 ...
+2025-09-23 11:15:30,433 - crm - INFO - Ollama responded: Nice to meet you. I'm an artificial intelligence model known...
+2025-09-23 11:15:30,442 - crm - INFO - Connected to Redis
+2025-09-23 11:15:30,467 - crm.rabbitmq.consumers - INFO -  [x] Started consumer thread for queue: create_embedding
+2025-09-23 11:15:30,468 - crm.rabbitmq.consumers - INFO -  [x] Started consumer thread for queue: batch_embedding
+2025-09-23 11:15:30,469 - crm.rabbitmq.consumers - INFO -  [x] Started consumer thread for queue: edit_embedding
+2025-09-23 11:15:30,469 - crm.rabbitmq.consumers - INFO -  [x] Started consumer thread for queue: delete_embedding
+2025-09-23 11:15:30,470 - crm.rabbitmq.consumers - INFO -  [x] Started consumer thread for queue: embedding_results
+2025-09-23 11:15:30,471 - crm.rabbitmq.consumers - INFO -  [x] Started consumer thread for queue: event_response
+2025-09-23 11:15:30,486 - crm - INFO -  [x] RabbitMQ connection initialized (consumer_edit_embedding)
+2025-09-23 11:15:30,486 - crm - INFO -  [x] RabbitMQ connection initialized (consumer_create_embedding)
+2025-09-23 11:15:30,486 - crm - INFO -  [x] RabbitMQ connection initialized (consumer_delete_embedding)
+2025-09-23 11:15:30,486 - crm - INFO -  [x] RabbitMQ connection initialized (consumer_batch_embedding)
+2025-09-23 11:15:30,488 - crm - INFO -  [x] RabbitMQ connection initialized (consumer_embedding_results)
+2025-09-23 11:15:30,488 - crm - INFO -  [x] RabbitMQ connection initialized (consumer_event_response)
+2025-09-23 11:15:30,497 - crm.rabbitmq.consumers - INFO -  [x] Started consuming from queue: delete_embedding
+2025-09-23 11:15:30,499 - crm.rabbitmq.consumers - INFO -  [x] Started consuming from queue: embedding_results
+2025-09-23 11:15:30,499 - crm.rabbitmq.consumers - INFO -  [x] Started consuming from queue: create_embedding
+2025-09-23 11:15:30,499 - crm.rabbitmq.consumers - INFO -  [x] Started consuming from queue: batch_embedding
+2025-09-23 11:15:30,499 - crm.rabbitmq.consumers - INFO -  [x] Started consuming from queue: edit_embedding
+2025-09-23 11:15:30,500 - crm.rabbitmq.consumers - INFO -  [x] Started consuming from queue: event_response
+2025-09-23 11:15:42,702 - crm.rabbitmq.consumers - ERROR - Failed to consume from create_embedding: ConnectionClosedByBroker: (320) "CONNECTION_FORCED - broker forced connection closure with reason 'shutdown'"
+2025-09-23 11:15:42,702 - crm.rabbitmq.consumers - ERROR - Failed to consume from edit_embedding: ConnectionClosedByBroker: (320) "CONNECTION_FORCED - broker forced connection closure with reason 'shutdown'"
+2025-09-23 11:15:42,702 - crm.rabbitmq.consumers - ERROR - Failed to consume from embedding_results: ConnectionClosedByBroker: (320) "CONNECTION_FORCED - broker forced connection closure with reason 'shutdown'"
+2025-09-23 11:15:42,702 - crm.rabbitmq.consumers - ERROR - Failed to consume from delete_embedding: ConnectionClosedByBroker: (320) "CONNECTION_FORCED - broker forced connection closure with reason 'shutdown'"
+2025-09-23 11:15:42,702 - crm.rabbitmq.consumers - ERROR - Failed to consume from batch_embedding: ConnectionClosedByBroker: (320) "CONNECTION_FORCED - broker forced connection closure with reason 'shutdown'"
+2025-09-23 11:15:42,702 - crm.rabbitmq.consumers - ERROR - Failed to consume from event_response: ConnectionClosedByBroker: (320) "CONNECTION_FORCED - broker forced connection closure with reason 'shutdown'"
+2025-09-23 11:15:57,712 - crm - ERROR - Failed to initialize RabbitMQ connection (consumer_batch_embedding): 
+2025-09-23 11:15:57,712 - crm - ERROR - Failed to initialize RabbitMQ connection (consumer_event_response): 
+2025-09-23 11:15:57,712 - crm - ERROR - Failed to initialize RabbitMQ connection (consumer_delete_embedding): 
+2025-09-23 11:15:57,712 - crm - ERROR - Failed to initialize RabbitMQ connection (consumer_create_embedding): 
+2025-09-23 11:15:57,712 - crm - ERROR - Failed to initialize RabbitMQ connection (consumer_edit_embedding): 
+2025-09-23 11:15:57,712 - crm - INFO - Connection not available (consumer_batch_embedding), attempting to reinitialize...
+2025-09-23 11:15:57,712 - crm - ERROR - Failed to initialize RabbitMQ connection (consumer_embedding_results): 
+2025-09-23 11:15:57,712 - crm - INFO - Connection not available (consumer_event_response), attempting to reinitialize...
+2025-09-23 11:15:57,712 - crm - INFO - Connection not available (consumer_delete_embedding), attempting to reinitialize...
+2025-09-23 11:15:57,712 - crm - INFO - Connection not available (consumer_create_embedding), attempting to reinitialize...
+2025-09-23 11:15:57,713 - crm - INFO - Connection not available (consumer_edit_embedding), attempting to reinitialize...
+2025-09-23 11:15:57,713 - crm - INFO - Connection not available (consumer_embedding_results), attempting to reinitialize...
+2025-09-23 11:16:07,717 - crm - ERROR - Failed to initialize RabbitMQ connection (consumer_edit_embedding): 
+2025-09-23 11:16:07,717 - crm.rabbitmq.consumers - ERROR - Cannot consume from edit_embedding: connection unavailable; retrying in 5s
+2025-09-23 11:16:07,720 - crm - ERROR - Failed to initialize RabbitMQ connection (consumer_batch_embedding): 
+2025-09-23 11:16:07,720 - crm.rabbitmq.consumers - ERROR - Cannot consume from batch_embedding: connection unavailable; retrying in 5s
+2025-09-23 11:16:07,720 - crm - ERROR - Failed to initialize RabbitMQ connection (consumer_create_embedding): 
+2025-09-23 11:16:07,721 - crm.rabbitmq.consumers - ERROR - Cannot consume from create_embedding: connection unavailable; retrying in 5s
+2025-09-23 11:16:07,722 - crm - ERROR - Failed to initialize RabbitMQ connection (consumer_event_response): 
+2025-09-23 11:16:07,722 - crm - ERROR - Failed to initialize RabbitMQ connection (consumer_delete_embedding): 
+2025-09-23 11:16:07,722 - crm.rabbitmq.consumers - ERROR - Cannot consume from event_response: connection unavailable; retrying in 5s
+2025-09-23 11:16:07,722 - crm.rabbitmq.consumers - ERROR - Cannot consume from delete_embedding: connection unavailable; retrying in 5s
+2025-09-23 11:16:07,723 - crm - ERROR - Failed to initialize RabbitMQ connection (consumer_embedding_results): 
+2025-09-23 11:16:07,723 - crm.rabbitmq.consumers - ERROR - Cannot consume from embedding_results: connection unavailable; retrying in 5s
+2025-09-23 11:16:22,724 - crm - ERROR - Failed to initialize RabbitMQ connection (consumer_edit_embedding): 
+2025-09-23 11:16:22,724 - crm - INFO - Connection not available (consumer_edit_embedding), attempting to reinitialize...
+2025-09-23 11:16:22,726 - crm - ERROR - Failed to initialize RabbitMQ connection (consumer_batch_embedding): 
+2025-09-23 11:16:22,726 - crm - INFO - Connection not available (consumer_batch_embedding), attempting to reinitialize...
+2025-09-23 11:16:22,727 - crm - ERROR - Failed to initialize RabbitMQ connection (consumer_create_embedding): 
+2025-09-23 11:16:22,727 - crm - INFO - Connection not available (consumer_create_embedding), attempting to reinitialize...
+2025-09-23 11:16:22,731 - crm - ERROR - Failed to initialize RabbitMQ connection (consumer_delete_embedding): 
+2025-09-23 11:16:22,731 - crm - ERROR - Failed to initialize RabbitMQ connection (consumer_event_response): 
+2025-09-23 11:16:22,731 - crm - ERROR - Failed to initialize RabbitMQ connection (consumer_embedding_results): 
+2025-09-23 11:16:22,731 - crm - INFO - Connection not available (consumer_delete_embedding), attempting to reinitialize...
+2025-09-23 11:16:22,731 - crm - INFO - Connection not available (consumer_event_response), attempting to reinitialize...
+2025-09-23 11:16:22,731 - crm - INFO - Connection not available (consumer_embedding_results), attempting to reinitialize...
+2025-09-23 11:16:28,493 - crm - ERROR - Failed to initialize RabbitMQ connection (consumer_edit_embedding): 
+2025-09-23 11:16:28,493 - crm - ERROR - Failed to initialize RabbitMQ connection (consumer_embedding_results): 
+2025-09-23 11:16:28,493 - crm - ERROR - Failed to initialize RabbitMQ connection (consumer_delete_embedding): 
+2025-09-23 11:16:28,493 - crm - ERROR - Failed to initialize RabbitMQ connection (consumer_create_embedding): 
+2025-09-23 11:16:28,493 - crm - ERROR - Failed to initialize RabbitMQ connection (consumer_batch_embedding): 
+2025-09-23 11:16:28,493 - crm - ERROR - Failed to initialize RabbitMQ connection (consumer_event_response): 
+2025-09-23 11:16:28,493 - crm.rabbitmq.consumers - ERROR - Cannot consume from edit_embedding: connection unavailable; retrying in 5s
+2025-09-23 11:16:28,493 - crm.rabbitmq.consumers - ERROR - Cannot consume from embedding_results: connection unavailable; retrying in 5s
+2025-09-23 11:16:28,494 - crm.rabbitmq.consumers - ERROR - Cannot consume from delete_embedding: connection unavailable; retrying in 5s
+2025-09-23 11:16:28,494 - crm.rabbitmq.consumers - ERROR - Cannot consume from create_embedding: connection unavailable; retrying in 5s
+2025-09-23 11:16:28,494 - crm.rabbitmq.consumers - ERROR - Cannot consume from batch_embedding: connection unavailable; retrying in 5s
+2025-09-23 11:16:28,494 - crm.rabbitmq.consumers - ERROR - Cannot consume from event_response: connection unavailable; retrying in 5s
+2025-09-23 11:16:36,557 - crm - ERROR - Failed to initialize RabbitMQ connection (consumer_delete_embedding): 
+2025-09-23 11:16:36,558 - crm - ERROR - Failed to initialize RabbitMQ connection (consumer_create_embedding): 
+2025-09-23 11:16:36,558 - crm - ERROR - Failed to initialize RabbitMQ connection (consumer_event_response): 
+2025-09-23 11:16:36,558 - crm - ERROR - Failed to initialize RabbitMQ connection (consumer_embedding_results): 
+2025-09-23 11:16:36,558 - crm - ERROR - Failed to initialize RabbitMQ connection (consumer_batch_embedding): 
+2025-09-23 11:16:36,558 - crm - ERROR - Failed to initialize RabbitMQ connection (consumer_edit_embedding): 
+2025-09-23 11:16:36,558 - crm - INFO - Connection not available (consumer_delete_embedding), attempting to reinitialize...
+2025-09-23 11:16:36,558 - crm - INFO - Connection not available (consumer_create_embedding), attempting to reinitialize...
+2025-09-23 11:16:36,558 - crm - INFO - Connection not available (consumer_event_response), attempting to reinitialize...
+2025-09-23 11:16:36,558 - crm - INFO - Connection not available (consumer_embedding_results), attempting to reinitialize...
+2025-09-23 11:16:36,558 - crm - INFO - Connection not available (consumer_batch_embedding), attempting to reinitialize...
+2025-09-23 11:16:36,558 - crm - INFO - Connection not available (consumer_edit_embedding), attempting to reinitialize...
+2025-09-23 11:16:39,629 - crm - ERROR - Failed to initialize RabbitMQ connection (consumer_batch_embedding): 
+2025-09-23 11:16:39,629 - crm - ERROR - Failed to initialize RabbitMQ connection (consumer_edit_embedding): 
+2025-09-23 11:16:39,629 - crm - ERROR - Failed to initialize RabbitMQ connection (consumer_delete_embedding): 
+2025-09-23 11:16:39,629 - crm - ERROR - Failed to initialize RabbitMQ connection (consumer_create_embedding): 
+2025-09-23 11:16:39,629 - crm.rabbitmq.consumers - ERROR - Cannot consume from batch_embedding: connection unavailable; retrying in 5s
+2025-09-23 11:16:39,629 - crm - ERROR - Failed to initialize RabbitMQ connection (consumer_event_response): 
+2025-09-23 11:16:39,629 - crm - ERROR - Failed to initialize RabbitMQ connection (consumer_embedding_results): 
+2025-09-23 11:16:39,629 - crm.rabbitmq.consumers - ERROR - Cannot consume from edit_embedding: connection unavailable; retrying in 5s
+2025-09-23 11:16:39,629 - crm.rabbitmq.consumers - ERROR - Cannot consume from delete_embedding: connection unavailable; retrying in 5s
+2025-09-23 11:16:39,629 - crm.rabbitmq.consumers - ERROR - Cannot consume from create_embedding: connection unavailable; retrying in 5s
+2025-09-23 11:16:39,629 - crm.rabbitmq.consumers - ERROR - Cannot consume from event_response: connection unavailable; retrying in 5s
+2025-09-23 11:16:39,629 - crm.rabbitmq.consumers - ERROR - Cannot consume from embedding_results: connection unavailable; retrying in 5s
+2025-09-23 11:16:47,692 - crm - ERROR - Failed to initialize RabbitMQ connection (consumer_batch_embedding): 
+2025-09-23 11:16:47,692 - crm - ERROR - Failed to initialize RabbitMQ connection (consumer_edit_embedding): 
+2025-09-23 11:16:47,693 - crm - ERROR - Failed to initialize RabbitMQ connection (consumer_embedding_results): 
+2025-09-23 11:16:47,693 - crm - ERROR - Failed to initialize RabbitMQ connection (consumer_event_response): 
+2025-09-23 11:16:47,693 - crm - INFO - Connection not available (consumer_batch_embedding), attempting to reinitialize...
+2025-09-23 11:16:47,693 - crm - ERROR - Failed to initialize RabbitMQ connection (consumer_delete_embedding): 
+2025-09-23 11:16:47,693 - crm - ERROR - Failed to initialize RabbitMQ connection (consumer_create_embedding): 
+2025-09-23 11:16:47,693 - crm - INFO - Connection not available (consumer_edit_embedding), attempting to reinitialize...
+2025-09-23 11:16:47,693 - crm - INFO - Connection not available (consumer_embedding_results), attempting to reinitialize...
+2025-09-23 11:16:47,693 - crm - INFO - Connection not available (consumer_event_response), attempting to reinitialize...
+2025-09-23 11:16:47,694 - crm - INFO - Connection not available (consumer_delete_embedding), attempting to reinitialize...
+2025-09-23 11:16:47,694 - crm - INFO - Connection not available (consumer_create_embedding), attempting to reinitialize...
+2025-09-23 11:16:50,765 - crm - ERROR - Failed to initialize RabbitMQ connection (consumer_embedding_results): 
+2025-09-23 11:16:50,765 - crm - ERROR - Failed to initialize RabbitMQ connection (consumer_batch_embedding): 
+2025-09-23 11:16:50,765 - crm - ERROR - Failed to initialize RabbitMQ connection (consumer_edit_embedding): 
+2025-09-23 11:16:50,765 - crm - ERROR - Failed to initialize RabbitMQ connection (consumer_create_embedding): 
+2025-09-23 11:16:50,765 - crm - ERROR - Failed to initialize RabbitMQ connection (consumer_event_response): 
+2025-09-23 11:16:50,765 - crm - ERROR - Failed to initialize RabbitMQ connection (consumer_delete_embedding): 
+2025-09-23 11:16:50,765 - crm.rabbitmq.consumers - ERROR - Cannot consume from embedding_results: connection unavailable; retrying in 5s
+2025-09-23 11:16:50,765 - crm.rabbitmq.consumers - ERROR - Cannot consume from batch_embedding: connection unavailable; retrying in 5s
+2025-09-23 11:16:50,765 - crm.rabbitmq.consumers - ERROR - Cannot consume from edit_embedding: connection unavailable; retrying in 5s
+2025-09-23 11:16:50,765 - crm.rabbitmq.consumers - ERROR - Cannot consume from create_embedding: connection unavailable; retrying in 5s
+2025-09-23 11:16:50,765 - crm.rabbitmq.consumers - ERROR - Cannot consume from event_response: connection unavailable; retrying in 5s
+2025-09-23 11:16:50,766 - crm.rabbitmq.consumers - ERROR - Cannot consume from delete_embedding: connection unavailable; retrying in 5s
+2025-09-23 11:16:58,330 - crm - INFO -  [x] RabbitMQ connection initialized (consumer_event_response)
+2025-09-23 11:16:58,330 - crm - INFO -  [x] RabbitMQ connection initialized (consumer_edit_embedding)
+2025-09-23 11:16:58,330 - crm - INFO -  [x] RabbitMQ connection initialized (consumer_delete_embedding)
+2025-09-23 11:16:58,330 - crm - INFO -  [x] RabbitMQ connection initialized (consumer_embedding_results)
+2025-09-23 11:16:58,330 - crm - INFO -  [x] RabbitMQ connection initialized (consumer_create_embedding)
+2025-09-23 11:16:58,330 - crm - INFO -  [x] RabbitMQ connection initialized (consumer_batch_embedding)
+2025-09-23 11:16:58,343 - crm.rabbitmq.consumers - INFO -  [x] Started consuming from queue: create_embedding
+2025-09-23 11:16:58,344 - crm.rabbitmq.consumers - INFO -  [x] Started consuming from queue: event_response
+2025-09-23 11:16:58,345 - crm.rabbitmq.consumers - INFO -  [x] Started consuming from queue: delete_embedding
+2025-09-23 11:16:58,348 - crm.rabbitmq.consumers - INFO -  [x] Started consuming from queue: embedding_results
+2025-09-23 11:16:58,348 - crm.rabbitmq.consumers - INFO -  [x] Started consuming from queue: batch_embedding
+2025-09-23 11:16:58,348 - crm.rabbitmq.consumers - INFO -  [x] Started consuming from queue: edit_embedding
+2025-09-23 11:18:36,188 - crm - WARNING - Shutting down services...
+2025-09-23 11:38:39,733 - crm - INFO - Connecting to MongoDB at: mongodb://192.168.1.72:27017/chat_db
+2025-09-23 11:38:39,736 - crm - INFO - Successfully connected to MongoDB.
+2025-09-23 11:38:40,443 - crm - ERROR - Waiting for Qdrant (192.168.1.72:6333)... attempt 1/10
+2025-09-23 11:38:42,447 - crm - ERROR - Waiting for Qdrant (192.168.1.72:6333)... attempt 2/10
+2025-09-23 11:38:44,451 - crm - ERROR - Waiting for Qdrant (192.168.1.72:6333)... attempt 3/10
+2025-09-23 11:38:46,453 - crm - ERROR - Waiting for Qdrant (192.168.1.72:6333)... attempt 4/10
+2025-09-23 11:38:48,458 - crm - ERROR - Waiting for Qdrant (192.168.1.72:6333)... attempt 5/10
+2025-09-23 11:38:50,467 - crm - ERROR - Waiting for Qdrant (192.168.1.72:6333)... attempt 6/10
+2025-09-23 11:38:52,471 - crm - ERROR - Waiting for Qdrant (192.168.1.72:6333)... attempt 7/10
+2025-09-23 11:38:54,474 - crm - ERROR - Waiting for Qdrant (192.168.1.72:6333)... attempt 8/10
+2025-09-23 11:38:56,477 - crm - ERROR - Waiting for Qdrant (192.168.1.72:6333)... attempt 9/10
+2025-09-23 11:38:58,480 - crm - ERROR - Waiting for Qdrant (192.168.1.72:6333)... attempt 10/10
+2025-09-23 13:27:15,501 - crm - INFO - Connecting to MongoDB at: mongodb://192.168.1.72:27017/chat_db
+2025-09-23 13:27:15,504 - crm - INFO - Successfully connected to MongoDB.
+2025-09-23 13:27:16,202 - crm - INFO - Qdrant is reachable at 192.168.1.72:6333
+2025-09-23 13:27:16,257 - crm - INFO - Collection 'CRM_zeta_documents_openai' already exists.
+2025-09-23 13:27:16,258 - crm - INFO - Project root directory: /home/zeta/Documents/zetalabs_projects/crm-ai/crm
+2025-09-23 13:27:16,267 - crm - INFO - Loading LLM provider: openai
+2025-09-23 13:27:16,780 - crm - INFO - OpenAI API KEY: sk-proj-h7... and model name gpt-3.5-turbo
+2025-09-23 13:27:16,780 - crm - INFO - Connecting to OpenAI using model gpt-3.5-turbo ...
+2025-09-23 13:27:16,940 - crm - INFO - Using OpenAI LLM
+2025-09-23 13:27:16,940 - crm - INFO - USE OPENAI: True
+2025-09-23 13:27:16,940 - crm - INFO - [Embedder Init] model=text-embedding-3-small use_openai=True
+2025-09-23 13:27:16,961 - crm - INFO - [Embedder] Using OpenAI model: text-embedding-3-small
+2025-09-23 13:27:17,121 - crm - INFO - Connecting to Ollama at http://192.168.1.72:11434 using model llama3.1 ...
+2025-09-23 13:27:21,989 - crm - INFO - Ollama responded: I'm an artificial intelligence model known as Llama. Llama s...
+2025-09-23 13:27:21,997 - crm - INFO - Starting up the application...
+2025-09-23 13:27:22,031 - crm - INFO - Connecting to Ollama at http://192.168.1.72:11434 using model llama3.1 ...
+2025-09-23 13:27:22,830 - crm - INFO - Ollama responded: I'm an artificial intelligence model known as Llama. Llama s...
+2025-09-23 13:27:22,837 - crm - INFO - Connected to Redis
+2025-09-23 13:27:22,840 - crm.rabbitmq.consumers - INFO -  [x] Started consumer thread for queue: create_embedding
+2025-09-23 13:27:22,842 - crm.rabbitmq.consumers - INFO -  [x] Started consumer thread for queue: batch_embedding
+2025-09-23 13:27:22,844 - crm.rabbitmq.consumers - INFO -  [x] Started consumer thread for queue: edit_embedding
+2025-09-23 13:27:22,845 - crm.rabbitmq.consumers - INFO -  [x] Started consumer thread for queue: delete_embedding
+2025-09-23 13:27:22,845 - crm.rabbitmq.consumers - INFO -  [x] Started consumer thread for queue: embedding_results
+2025-09-23 13:27:22,846 - crm.rabbitmq.consumers - INFO -  [x] Started consumer thread for queue: event_response
+2025-09-23 13:27:22,856 - crm - INFO -  [x] RabbitMQ connection initialized (consumer_create_embedding)
+2025-09-23 13:27:22,856 - crm - INFO -  [x] RabbitMQ connection initialized (consumer_edit_embedding)
+2025-09-23 13:27:22,856 - crm - INFO -  [x] RabbitMQ connection initialized (consumer_batch_embedding)
+2025-09-23 13:27:22,858 - crm - INFO -  [x] RabbitMQ connection initialized (consumer_embedding_results)
+2025-09-23 13:27:22,858 - crm - INFO -  [x] RabbitMQ connection initialized (consumer_event_response)
+2025-09-23 13:27:22,859 - crm - INFO -  [x] RabbitMQ connection initialized (consumer_delete_embedding)
+2025-09-23 13:27:22,867 - crm.rabbitmq.consumers - INFO -  [x] Started consuming from queue: batch_embedding
+2025-09-23 13:27:22,868 - crm.rabbitmq.consumers - INFO -  [x] Started consuming from queue: create_embedding
+2025-09-23 13:27:22,868 - crm.rabbitmq.consumers - INFO -  [x] Started consuming from queue: delete_embedding
+2025-09-23 13:27:22,869 - crm.rabbitmq.consumers - INFO -  [x] Started consuming from queue: event_response
+2025-09-23 13:27:22,869 - crm.rabbitmq.consumers - INFO -  [x] Started consuming from queue: embedding_results
+2025-09-23 13:27:22,869 - crm.rabbitmq.consumers - INFO -  [x] Started consuming from queue: edit_embedding
+2025-09-23 15:00:20,239 - crm - WARNING - Shutting down services...
+2025-09-23 15:00:22,384 - crm - INFO - Connecting to MongoDB at: mongodb://192.168.1.72:27017/chat_db
+2025-09-23 15:00:22,386 - crm - INFO - Successfully connected to MongoDB.
+2025-09-23 15:00:23,302 - crm - INFO - Qdrant is reachable at 192.168.1.72:6333
+2025-09-23 15:00:23,557 - crm - INFO - Collection 'CRM_zeta_documents_openai' already exists.
+2025-09-23 15:00:23,569 - crm - INFO - Project root directory: /home/zeta/Documents/zetalabs_projects/crm-ai/crm
+2025-09-23 15:00:23,576 - crm - INFO - Loading LLM provider: openai
+2025-09-23 15:00:24,250 - crm - INFO - OpenAI API KEY: sk-proj-h7... and model name gpt-3.5-turbo
+2025-09-23 15:00:24,250 - crm - INFO - Connecting to OpenAI using model gpt-3.5-turbo ...
+2025-09-23 15:00:24,481 - crm - INFO - Using OpenAI LLM
+2025-09-23 15:00:24,481 - crm - INFO - USE OPENAI: True
+2025-09-23 15:00:24,481 - crm - INFO - [Embedder Init] model=text-embedding-3-small use_openai=True
+2025-09-23 15:00:24,510 - crm - INFO - [Embedder] Using OpenAI model: text-embedding-3-small
+2025-09-23 15:00:24,883 - crm - INFO - Connecting to Ollama at http://192.168.1.72:11434 using model llama3.1 ...
+2025-09-23 15:00:29,087 - crm - INFO - Ollama responded: I'm an artificial intelligence model known as Llama. Llama s...
+2025-09-23 15:00:29,092 - crm - INFO - Starting up the application...
+2025-09-23 15:00:29,265 - crm - INFO - Connecting to Ollama at http://192.168.1.72:11434 using model llama3.1 ...
+2025-09-23 15:00:29,731 - crm - INFO - Ollama responded: I'm an artificial intelligence model known as Llama. Llama s...
+2025-09-23 15:00:30,114 - crm - INFO - Connected to Redis
+2025-09-23 15:00:30,117 - crm.rabbitmq.consumers - INFO -  [x] Started consumer thread for queue: create_embedding
+2025-09-23 15:00:30,119 - crm.rabbitmq.consumers - INFO -  [x] Started consumer thread for queue: batch_embedding
+2025-09-23 15:00:30,120 - crm.rabbitmq.consumers - INFO -  [x] Started consumer thread for queue: edit_embedding
+2025-09-23 15:00:30,122 - crm.rabbitmq.consumers - INFO -  [x] Started consumer thread for queue: delete_embedding
+2025-09-23 15:00:30,123 - crm.rabbitmq.consumers - INFO -  [x] Started consumer thread for queue: embedding_results
+2025-09-23 15:00:30,123 - crm.rabbitmq.consumers - INFO -  [x] Started consumer thread for queue: event_response
+2025-09-23 15:00:30,451 - crm - INFO -  [x] RabbitMQ connection initialized (consumer_edit_embedding)
+2025-09-23 15:00:30,452 - crm - INFO -  [x] RabbitMQ connection initialized (consumer_delete_embedding)
+2025-09-23 15:00:30,452 - crm - INFO -  [x] RabbitMQ connection initialized (consumer_embedding_results)
+2025-09-23 15:00:30,452 - crm - INFO -  [x] RabbitMQ connection initialized (consumer_batch_embedding)
+2025-09-23 15:00:30,453 - crm - INFO -  [x] RabbitMQ connection initialized (consumer_event_response)
+2025-09-23 15:00:30,453 - crm - INFO -  [x] RabbitMQ connection initialized (consumer_create_embedding)
+2025-09-23 15:00:30,907 - crm.rabbitmq.consumers - INFO -  [x] Started consuming from queue: delete_embedding
+2025-09-23 15:00:30,907 - crm.rabbitmq.consumers - INFO -  [x] Started consuming from queue: edit_embedding
+2025-09-23 15:00:30,907 - crm.rabbitmq.consumers - INFO -  [x] Started consuming from queue: embedding_results
+2025-09-23 15:00:30,910 - crm.rabbitmq.consumers - INFO -  [x] Started consuming from queue: event_response
+2025-09-23 15:00:30,910 - crm.rabbitmq.consumers - INFO -  [x] Started consuming from queue: create_embedding
+2025-09-23 15:00:30,910 - crm.rabbitmq.consumers - INFO -  [x] Started consuming from queue: batch_embedding
+2025-09-23 15:00:49,166 - crm - WARNING - Shutting down services...
+2025-09-23 15:01:14,042 - crm - INFO - Connecting to MongoDB at: mongodb://192.168.1.72:27017/chat_db
+2025-09-23 15:01:14,045 - crm - INFO - Successfully connected to MongoDB.
+2025-09-23 15:01:14,826 - crm - INFO - Qdrant is reachable at 192.168.1.72:6333
+2025-09-23 15:01:15,077 - crm - INFO - Collection 'CRM_zeta_documents_openai' already exists.
+2025-09-23 15:01:15,079 - crm - INFO - Project root directory: /home/zeta/Documents/zetalabs_projects/crm-ai/crm
+2025-09-23 15:01:15,085 - crm - INFO - Loading LLM provider: openai
+2025-09-23 15:01:15,649 - crm - INFO - OpenAI API KEY: sk-proj-h7... and model name gpt-3.5-turbo
+2025-09-23 15:01:15,650 - crm - INFO - Connecting to OpenAI using model gpt-3.5-turbo ...
+2025-09-23 15:01:15,809 - crm - INFO - Using OpenAI LLM
+2025-09-23 15:01:15,809 - crm - INFO - USE OPENAI: True
+2025-09-23 15:01:15,810 - crm - INFO - [Embedder Init] model=text-embedding-3-small use_openai=True
+2025-09-23 15:01:15,831 - crm - INFO - [Embedder] Using OpenAI model: text-embedding-3-small
+2025-09-23 15:01:16,185 - crm - INFO - Connecting to Ollama at http://192.168.1.72:11434 using model llama3.1 ...
+2025-09-23 15:01:19,111 - crm - INFO - Ollama responded: I'm an artificial intelligence model known as Llama. Llama s...
+2025-09-23 15:01:19,119 - crm - INFO - Starting up the application...
+2025-09-23 15:01:19,331 - crm - INFO - Connecting to Ollama at http://192.168.1.72:11434 using model llama3.1 ...
+2025-09-23 15:01:20,067 - crm - INFO - Ollama responded: I'm an artificial intelligence model known as Llama. Llama s...
+2025-09-23 15:01:20,535 - crm - INFO - Connected to Redis
+2025-09-23 15:01:20,537 - crm.rabbitmq.consumers - INFO -  [x] Started consumer thread for queue: create_embedding
+2025-09-23 15:01:20,539 - crm.rabbitmq.consumers - INFO -  [x] Started consumer thread for queue: batch_embedding
+2025-09-23 15:01:20,540 - crm.rabbitmq.consumers - INFO -  [x] Started consumer thread for queue: edit_embedding
+2025-09-23 15:01:20,541 - crm.rabbitmq.consumers - INFO -  [x] Started consumer thread for queue: delete_embedding
+2025-09-23 15:01:20,542 - crm.rabbitmq.consumers - INFO -  [x] Started consumer thread for queue: embedding_results
+2025-09-23 15:01:20,542 - crm.rabbitmq.consumers - INFO -  [x] Started consumer thread for queue: event_response
+2025-09-23 15:01:20,927 - crm - INFO -  [x] RabbitMQ connection initialized (consumer_batch_embedding)
+2025-09-23 15:01:20,928 - crm - INFO -  [x] RabbitMQ connection initialized (consumer_create_embedding)
+2025-09-23 15:01:20,928 - crm - INFO -  [x] RabbitMQ connection initialized (consumer_embedding_results)
+2025-09-23 15:01:20,928 - crm - INFO -  [x] RabbitMQ connection initialized (consumer_event_response)
+2025-09-23 15:01:20,928 - crm - INFO -  [x] RabbitMQ connection initialized (consumer_edit_embedding)
+2025-09-23 15:01:20,928 - crm - INFO -  [x] RabbitMQ connection initialized (consumer_delete_embedding)
+2025-09-23 15:01:21,514 - crm.rabbitmq.consumers - INFO -  [x] Started consuming from queue: event_response
+2025-09-23 15:01:21,516 - crm.rabbitmq.consumers - INFO -  [x] Started consuming from queue: delete_embedding
+2025-09-23 15:01:21,516 - crm.rabbitmq.consumers - INFO -  [x] Started consuming from queue: embedding_results
+2025-09-23 15:01:21,516 - crm.rabbitmq.consumers - INFO -  [x] Started consuming from queue: edit_embedding
+2025-09-23 15:01:21,516 - crm.rabbitmq.consumers - INFO -  [x] Started consuming from queue: batch_embedding
+2025-09-23 15:01:21,516 - crm.rabbitmq.consumers - INFO -  [x] Started consuming from queue: create_embedding
+2025-09-23 15:03:50,165 - crm - WARNING - Shutting down services...
+2025-09-23 15:03:59,941 - crm - INFO - Connecting to MongoDB at: mongodb://192.168.1.72:27017/chat_db
+2025-09-23 15:03:59,945 - crm - INFO - Successfully connected to MongoDB.
+2025-09-23 15:04:00,934 - crm - INFO - Qdrant is reachable at 192.168.1.72:6333
+2025-09-23 15:04:01,011 - crm - INFO - Collection 'CRM_zeta_documents_openai' already exists.
+2025-09-23 15:04:01,014 - crm - INFO - Project root directory: /home/zeta/Documents/zetalabs_projects/crm-ai/crm
+2025-09-23 15:04:01,030 - crm - INFO - Loading LLM provider: openai
+2025-09-23 15:04:01,767 - crm - INFO - OpenAI API KEY: sk-proj-h7... and model name gpt-3.5-turbo
+2025-09-23 15:04:01,767 - crm - INFO - Connecting to OpenAI using model gpt-3.5-turbo ...
+2025-09-23 15:04:01,993 - crm - INFO - Using OpenAI LLM
+2025-09-23 15:04:01,993 - crm - INFO - USE OPENAI: True
+2025-09-23 15:04:01,994 - crm - INFO - [Embedder Init] model=text-embedding-3-small use_openai=True
+2025-09-23 15:04:02,023 - crm - INFO - [Embedder] Using OpenAI model: text-embedding-3-small
+2025-09-23 15:04:02,251 - crm - INFO - Connecting to Ollama at http://192.168.1.72:11434 using model llama3.1 ...
+2025-09-23 15:04:02,543 - crm - INFO - Ollama responded: I'm an artificial intelligence model known as Llama. Llama s...
+2025-09-23 15:04:02,550 - crm - INFO - Starting up the application...
+2025-09-23 15:04:02,580 - crm - INFO - Connecting to Ollama at http://192.168.1.72:11434 using model llama3.1 ...
+2025-09-23 15:04:02,847 - crm - INFO - Ollama responded: I'm an artificial intelligence model known as Llama. Llama s...
+2025-09-23 15:04:02,855 - crm - INFO - Connected to Redis
+2025-09-23 15:04:02,860 - crm.rabbitmq.consumers - INFO -  [x] Started consumer thread for queue: create_embedding
+2025-09-23 15:04:02,864 - crm.rabbitmq.consumers - INFO -  [x] Started consumer thread for queue: batch_embedding
+2025-09-23 15:04:02,866 - crm.rabbitmq.consumers - INFO -  [x] Started consumer thread for queue: edit_embedding
+2025-09-23 15:04:02,867 - crm.rabbitmq.consumers - INFO -  [x] Started consumer thread for queue: delete_embedding
+2025-09-23 15:04:02,868 - crm.rabbitmq.consumers - INFO -  [x] Started consumer thread for queue: embedding_results
+2025-09-23 15:04:02,870 - crm.rabbitmq.consumers - INFO -  [x] Started consumer thread for queue: event_response
+2025-09-23 15:04:02,873 - crm - INFO -  [x] RabbitMQ connection initialized (consumer_create_embedding)
+2025-09-23 15:04:02,875 - crm - INFO -  [x] RabbitMQ connection initialized (consumer_batch_embedding)
+2025-09-23 15:04:02,877 - crm - INFO -  [x] RabbitMQ connection initialized (consumer_embedding_results)
+2025-09-23 15:04:02,877 - crm - INFO -  [x] RabbitMQ connection initialized (consumer_edit_embedding)
+2025-09-23 15:04:02,877 - crm - INFO -  [x] RabbitMQ connection initialized (consumer_delete_embedding)
+2025-09-23 15:04:02,879 - crm - INFO -  [x] RabbitMQ connection initialized (consumer_event_response)
+2025-09-23 15:04:02,885 - crm.rabbitmq.consumers - INFO -  [x] Started consuming from queue: create_embedding
+2025-09-23 15:04:02,887 - crm.rabbitmq.consumers - INFO -  [x] Started consuming from queue: embedding_results
+2025-09-23 15:04:02,887 - crm.rabbitmq.consumers - INFO -  [x] Started consuming from queue: batch_embedding
+2025-09-23 15:04:02,888 - crm.rabbitmq.consumers - INFO -  [x] Started consuming from queue: edit_embedding
+2025-09-23 15:04:02,889 - crm.rabbitmq.consumers - INFO -  [x] Started consuming from queue: delete_embedding
+2025-09-23 15:04:02,890 - crm.rabbitmq.consumers - INFO -  [x] Started consuming from queue: event_response
+2025-09-23 15:04:08,182 - crm - WARNING - Shutting down services...
+2025-09-23 15:04:10,280 - crm - INFO - Connecting to MongoDB at: mongodb://192.168.1.72:27017/chat_db
+2025-09-23 15:04:10,283 - crm - INFO - Successfully connected to MongoDB.
+2025-09-23 15:04:11,158 - crm - INFO - Qdrant is reachable at 192.168.1.72:6333
+2025-09-23 15:04:11,218 - crm - INFO - Collection 'CRM_zeta_documents_openai' already exists.
+2025-09-23 15:04:11,219 - crm - INFO - Project root directory: /home/zeta/Documents/zetalabs_projects/crm-ai/crm
+2025-09-23 15:04:11,228 - crm - INFO - Loading LLM provider: openai
+2025-09-23 15:04:11,859 - crm - INFO - OpenAI API KEY: sk-proj-h7... and model name gpt-3.5-turbo
+2025-09-23 15:04:11,859 - crm - INFO - Connecting to OpenAI using model gpt-3.5-turbo ...
+2025-09-23 15:04:12,043 - crm - INFO - Using OpenAI LLM
+2025-09-23 15:04:12,044 - crm - INFO - USE OPENAI: True
+2025-09-23 15:04:12,044 - crm - INFO - [Embedder Init] model=text-embedding-3-small use_openai=True
+2025-09-23 15:04:12,066 - crm - INFO - [Embedder] Using OpenAI model: text-embedding-3-small
+2025-09-23 15:04:12,238 - crm - INFO - Connecting to Ollama at http://192.168.1.72:11434 using model llama3.1 ...
+2025-09-23 15:04:13,503 - crm - INFO - Ollama responded: I'm an artificial intelligence model known as Llama. Llama s...
+2025-09-23 15:04:13,508 - crm - INFO - Starting up the application...
+2025-09-23 15:04:13,534 - crm - INFO - Connecting to Ollama at http://192.168.1.72:11434 using model llama3.1 ...
+2025-09-23 15:04:13,776 - crm - INFO - Ollama responded: I'm an artificial intelligence model known as Llama. Llama s...
+2025-09-23 15:04:13,786 - crm - INFO - Connected to Redis
+2025-09-23 15:04:13,788 - crm.rabbitmq.consumers - INFO -  [x] Started consumer thread for queue: create_embedding
+2025-09-23 15:04:13,790 - crm.rabbitmq.consumers - INFO -  [x] Started consumer thread for queue: batch_embedding
+2025-09-23 15:04:13,791 - crm.rabbitmq.consumers - INFO -  [x] Started consumer thread for queue: edit_embedding
+2025-09-23 15:04:13,792 - crm.rabbitmq.consumers - INFO -  [x] Started consumer thread for queue: delete_embedding
+2025-09-23 15:04:13,793 - crm.rabbitmq.consumers - INFO -  [x] Started consumer thread for queue: embedding_results
+2025-09-23 15:04:13,794 - crm.rabbitmq.consumers - INFO -  [x] Started consumer thread for queue: event_response
+2025-09-23 15:04:14,173 - crm - INFO - Connecting to MongoDB at: mongodb://192.168.1.72:27017/chat_db
+2025-09-23 15:04:14,175 - crm - INFO - Successfully connected to MongoDB.
+2025-09-23 15:04:14,876 - crm - INFO - Qdrant is reachable at 192.168.1.72:6333
+2025-09-23 15:04:14,928 - crm - INFO - Collection 'CRM_zeta_documents_openai' already exists.
+2025-09-23 15:04:14,930 - crm - INFO - Project root directory: /home/zeta/Documents/zetalabs_projects/crm-ai/crm
+2025-09-23 15:04:14,937 - crm - INFO - Loading LLM provider: openai
+2025-09-23 15:04:15,461 - crm - INFO - OpenAI API KEY: sk-proj-h7... and model name gpt-3.5-turbo
+2025-09-23 15:04:15,461 - crm - INFO - Connecting to OpenAI using model gpt-3.5-turbo ...
+2025-09-23 15:04:15,631 - crm - INFO - Using OpenAI LLM
+2025-09-23 15:04:15,632 - crm - INFO - USE OPENAI: True
+2025-09-23 15:04:15,632 - crm - INFO - [Embedder Init] model=text-embedding-3-small use_openai=True
+2025-09-23 15:04:15,654 - crm - INFO - [Embedder] Using OpenAI model: text-embedding-3-small
+2025-09-23 15:04:15,816 - crm - INFO - Connecting to Ollama at http://192.168.1.72:11434 using model llama3.1 ...
+2025-09-23 15:04:16,790 - crm - INFO - Ollama responded: I'm an artificial intelligence model known as Llama. Llama s...
+2025-09-23 15:04:16,795 - crm - INFO - Starting up the application...
+2025-09-23 15:04:16,821 - crm - INFO - Connecting to Ollama at http://192.168.1.72:11434 using model llama3.1 ...
+2025-09-23 15:04:17,347 - crm - INFO - Ollama responded: I'm an artificial intelligence model known as Llama. Llama s...
+2025-09-23 15:04:17,369 - crm - INFO - Connected to Redis
+2025-09-23 15:04:17,371 - crm.rabbitmq.consumers - INFO -  [x] Started consumer thread for queue: create_embedding
+2025-09-23 15:04:17,373 - crm.rabbitmq.consumers - INFO -  [x] Started consumer thread for queue: batch_embedding
+2025-09-23 15:04:17,374 - crm.rabbitmq.consumers - INFO -  [x] Started consumer thread for queue: edit_embedding
+2025-09-23 15:04:17,375 - crm.rabbitmq.consumers - INFO -  [x] Started consumer thread for queue: delete_embedding
+2025-09-23 15:04:17,376 - crm.rabbitmq.consumers - INFO -  [x] Started consumer thread for queue: embedding_results
+2025-09-23 15:04:17,377 - crm.rabbitmq.consumers - INFO -  [x] Started consumer thread for queue: event_response
+2025-09-23 15:04:17,384 - crm - INFO -  [x] RabbitMQ connection initialized (consumer_create_embedding)
+2025-09-23 15:04:17,384 - crm - INFO -  [x] RabbitMQ connection initialized (consumer_batch_embedding)
+2025-09-23 15:04:17,387 - crm - INFO -  [x] RabbitMQ connection initialized (consumer_edit_embedding)
+2025-09-23 15:04:17,387 - crm - INFO -  [x] RabbitMQ connection initialized (consumer_delete_embedding)
+2025-09-23 15:04:17,390 - crm - INFO -  [x] RabbitMQ connection initialized (consumer_event_response)
+2025-09-23 15:04:17,391 - crm - INFO -  [x] RabbitMQ connection initialized (consumer_embedding_results)
+2025-09-23 15:04:17,399 - crm.rabbitmq.consumers - INFO -  [x] Started consuming from queue: create_embedding
+2025-09-23 15:04:17,400 - crm.rabbitmq.consumers - INFO -  [x] Started consuming from queue: delete_embedding
+2025-09-23 15:04:17,401 - crm.rabbitmq.consumers - INFO -  [x] Started consuming from queue: batch_embedding
+2025-09-23 15:04:17,402 - crm.rabbitmq.consumers - INFO -  [x] Started consuming from queue: edit_embedding
+2025-09-23 15:04:17,405 - crm.rabbitmq.consumers - INFO -  [x] Started consuming from queue: embedding_results
+2025-09-23 15:04:17,407 - crm.rabbitmq.consumers - INFO -  [x] Started consuming from queue: event_response
+2025-09-23 15:04:48,270 - crm - INFO - Compose request | status=StatusEnum.NEW | thread_messages=1 | top_k=6 | first_message='string'
+2025-09-23 15:04:50,114 - crm - INFO - Email compose retrieval: len_context=22014, sources=6
+2025-09-23 15:08:47,076 - crm - INFO - Compose request | status=StatusEnum.QUALIFIED | thread_messages=1 | top_k=6 | first_message='test '
+2025-09-23 15:08:48,214 - crm - INFO - Email compose retrieval: len_context=22014, sources=6
+2025-09-23 15:13:38,917 - crm - INFO - Compose request | status=StatusEnum.QUALIFIED | thread_messages=1 | top_k=6 | first_message='test '
+2025-09-23 15:13:39,833 - crm - INFO - Email compose retrieval: len_context=22014, sources=6
+2025-09-23 15:16:14,772 - crm - INFO - Compose request | status=StatusEnum.QUALIFIED | thread_messages=1 | top_k=6 | first_message='test '
+2025-09-23 15:16:15,631 - crm - INFO - Email compose retrieval: len_context=22014, sources=6
+2025-09-23 15:22:52,050 - crm - INFO - Compose request | status=StatusEnum.QUALIFIED | thread_messages=1 | top_k=6 | first_message='test '
+2025-09-23 15:22:52,894 - crm - INFO - Email compose retrieval: len_context=22014, sources=6
+2025-09-23 15:38:32,848 - crm - INFO - Compose request | status=StatusEnum.QUALIFIED | thread_messages=1 | top_k=6 | first_message='test '
+2025-09-23 15:38:34,278 - crm - INFO - Email compose retrieval: len_context=22014, sources=6
+2025-09-23 15:41:18,839 - crm - INFO - Compose request | status=StatusEnum.QUALIFIED | thread_messages=1 | top_k=6 | first_message='t '
+2025-09-23 15:41:19,333 - crm - INFO - Email compose retrieval: len_context=22014, sources=6
+2025-09-23 15:42:17,603 - crm - INFO - Compose request | status=StatusEnum.QUALIFIED | thread_messages=1 | top_k=6 | first_message='test '
+2025-09-23 15:42:18,495 - crm - INFO - Email compose retrieval: len_context=22014, sources=6
+2025-09-23 15:44:24,898 - crm - INFO - Compose request | status=StatusEnum.QUALIFIED | thread_messages=1 | top_k=6 | first_message='z '
+2025-09-23 15:44:25,820 - crm - INFO - Email compose retrieval: len_context=22014, sources=6
+2025-09-23 15:44:56,802 - crm - INFO - Compose request | status=StatusEnum.QUALIFIED | thread_messages=1 | top_k=6 | first_message='ze '
+2025-09-23 15:44:57,462 - crm - INFO - Email compose retrieval: len_context=22014, sources=6
+2025-09-23 15:49:58,800 - crm - INFO - Compose request | status=StatusEnum.QUALIFIED | thread_messages=1 | top_k=6 | first_message='ze '
+2025-09-23 15:49:59,325 - crm - INFO - Email compose retrieval: len_context=22014, sources=6
+                                                                                                                                                                                                                                      2025-09-23 15:58:16,046 - crm - INFO - Connecting to MongoDB at: mongodb://192.168.1.72:27017/chat_db
+2025-09-23 15:58:16,051 - crm - INFO - Successfully connected to MongoDB.
+2025-09-23 15:58:17,133 - crm - INFO - Qdrant is reachable at 192.168.1.72:6333
+2025-09-23 15:58:17,231 - crm - INFO - Collection 'CRM_zeta_documents_openai' already exists.
+2025-09-23 15:58:17,233 - crm - INFO - Project root directory: /home/zeta/Documents/zetalabs_projects/crm-ai/crm
+2025-09-23 15:58:17,244 - crm - INFO - Loading LLM provider: openai
+2025-09-23 15:58:18,015 - crm - INFO - OpenAI API KEY: sk-proj-h7... and model name gpt-3.5-turbo
+2025-09-23 15:58:18,015 - crm - INFO - Connecting to OpenAI using model gpt-3.5-turbo ...
+2025-09-23 15:58:18,241 - crm - INFO - Using OpenAI LLM
+2025-09-23 15:58:18,242 - crm - INFO - USE OPENAI: True
+2025-09-23 15:58:18,242 - crm - INFO - [Embedder Init] model=text-embedding-3-small use_openai=True
+2025-09-23 15:58:18,271 - crm - INFO - [Embedder] Using OpenAI model: text-embedding-3-small
+2025-09-23 15:58:18,483 - crm - INFO - Connecting to Ollama at http://192.168.1.72:11434 using model llama3.1 ...
+2025-09-23 15:58:23,020 - crm - INFO - Ollama responded: I'm an artificial intelligence model known as Llama. Llama s...
+2025-09-23 15:58:23,038 - crm - INFO - Starting up the application...
+2025-09-23 15:58:23,081 - crm - INFO - Connecting to Ollama at http://192.168.1.72:11434 using model llama3.1 ...
+2025-09-23 15:58:23,350 - crm - INFO - Ollama responded: I'm an artificial intelligence model known as Llama. Llama s...
+2025-09-23 15:58:23,362 - crm - INFO - Connected to Redis
+2025-09-23 15:58:23,375 - crm.rabbitmq.consumers - INFO -  [x] Started consumer thread for queue: create_embedding
+2025-09-23 15:58:23,378 - crm.rabbitmq.consumers - INFO -  [x] Started consumer thread for queue: batch_embedding
+2025-09-23 15:58:23,380 - crm.rabbitmq.consumers - INFO -  [x] Started consumer thread for queue: edit_embedding
+2025-09-23 15:58:23,383 - crm.rabbitmq.consumers - INFO -  [x] Started consumer thread for queue: delete_embedding
+2025-09-23 15:58:23,384 - crm.rabbitmq.consumers - INFO -  [x] Started consumer thread for queue: embedding_results
+2025-09-23 15:58:23,385 - crm.rabbitmq.consumers - INFO -  [x] Started consumer thread for queue: event_response
+2025-09-23 15:58:23,393 - crm - INFO -  [x] RabbitMQ connection initialized (consumer_create_embedding)
+2025-09-23 15:58:23,394 - crm - INFO -  [x] RabbitMQ connection initialized (consumer_batch_embedding)
+2025-09-23 15:58:23,394 - crm - INFO -  [x] RabbitMQ connection initialized (consumer_edit_embedding)
+2025-09-23 15:58:23,397 - crm - INFO -  [x] RabbitMQ connection initialized (consumer_event_response)
+2025-09-23 15:58:23,398 - crm - INFO -  [x] RabbitMQ connection initialized (consumer_embedding_results)
+2025-09-23 15:58:23,399 - crm - INFO -  [x] RabbitMQ connection initialized (consumer_delete_embedding)
+2025-09-23 15:58:23,407 - crm.rabbitmq.consumers - INFO -  [x] Started consuming from queue: create_embedding
+2025-09-23 15:58:23,409 - crm.rabbitmq.consumers - INFO -  [x] Started consuming from queue: edit_embedding
+2025-09-23 15:58:23,412 - crm.rabbitmq.consumers - INFO -  [x] Started consuming from queue: batch_embedding
+2025-09-23 15:58:23,412 - crm.rabbitmq.consumers - INFO -  [x] Started consuming from queue: event_response
+2025-09-23 15:58:23,412 - crm.rabbitmq.consumers - INFO -  [x] Started consuming from queue: embedding_results
+2025-09-23 15:58:23,415 - crm.rabbitmq.consumers - INFO -  [x] Started consuming from queue: delete_embedding
+2025-09-23 15:58:24,542 - crm - INFO - Compose request | status=StatusEnum.QUALIFIED | thread_messages=1 | top_k=6 | first_message='t '
+2025-09-23 15:58:25,305 - crm - INFO - Email compose retrieval: len_context=22014, sources=6
+2025-09-23 16:22:13,521 - crm.rabbitmq.consumers - ERROR - Failed to consume from embedding_results: AMQPHeartbeatTimeout: ('No activity or too many missed heartbeats in the last 60 seconds',)
+2025-09-23 16:22:13,523 - crm.rabbitmq.consumers - ERROR - Failed to consume from create_embedding: AMQPHeartbeatTimeout: ('No activity or too many missed heartbeats in the last 60 seconds',)
+2025-09-23 16:22:13,526 - crm.rabbitmq.consumers - ERROR - Failed to consume from event_response: AMQPHeartbeatTimeout: ('No activity or too many missed heartbeats in the last 60 seconds',)
+2025-09-23 16:22:13,527 - crm.rabbitmq.consumers - ERROR - Failed to consume from batch_embedding: AMQPHeartbeatTimeout: ('No activity or too many missed heartbeats in the last 60 seconds',)
+2025-09-23 16:22:13,529 - crm.rabbitmq.consumers - ERROR - Failed to consume from delete_embedding: AMQPHeartbeatTimeout: ('No activity or too many missed heartbeats in the last 60 seconds',)
+2025-09-23 16:22:13,530 - crm.rabbitmq.consumers - ERROR - Failed to consume from edit_embedding: AMQPHeartbeatTimeout: ('No activity or too many missed heartbeats in the last 60 seconds',)
+2025-09-23 16:22:28,535 - crm - ERROR - Failed to initialize RabbitMQ connection (consumer_embedding_results): 
+2025-09-23 16:22:28,535 - crm - INFO - Connection not available (consumer_embedding_results), attempting to reinitialize...
+2025-09-23 16:22:28,538 - crm - ERROR - Failed to initialize RabbitMQ connection (consumer_edit_embedding): 
+2025-09-23 16:22:28,539 - crm - ERROR - Failed to initialize RabbitMQ connection (consumer_create_embedding): 
+2025-09-23 16:22:28,539 - crm - INFO - Connection not available (consumer_edit_embedding), attempting to reinitialize...
+2025-09-23 16:22:28,539 - crm - INFO - Connection not available (consumer_create_embedding), attempting to reinitialize...
+2025-09-23 16:22:28,540 - crm - ERROR - Failed to initialize RabbitMQ connection (consumer_batch_embedding): 
+2025-09-23 16:22:28,540 - crm - ERROR - Failed to initialize RabbitMQ connection (consumer_delete_embedding): 
+2025-09-23 16:22:28,541 - crm - ERROR - Failed to initialize RabbitMQ connection (consumer_event_response): 
+2025-09-23 16:22:28,541 - crm - INFO - Connection not available (consumer_batch_embedding), attempting to reinitialize...
+2025-09-23 16:22:28,542 - crm - INFO - Connection not available (consumer_delete_embedding), attempting to reinitialize...
+2025-09-23 16:22:28,542 - crm - INFO - Connection not available (consumer_event_response), attempting to reinitialize...
+2025-09-23 16:22:38,541 - crm - ERROR - Failed to initialize RabbitMQ connection (consumer_embedding_results): 
+2025-09-23 16:22:38,541 - crm.rabbitmq.consumers - ERROR - Cannot consume from embedding_results: connection unavailable; retrying in 5s
+2025-09-23 16:22:38,546 - crm - ERROR - Failed to initialize RabbitMQ connection (consumer_edit_embedding): 
+2025-09-23 16:22:38,546 - crm.rabbitmq.consumers - ERROR - Cannot consume from edit_embedding: connection unavailable; retrying in 5s
+2025-09-23 16:22:38,547 - crm - ERROR - Failed to initialize RabbitMQ connection (consumer_create_embedding): 
+2025-09-23 16:22:38,547 - crm.rabbitmq.consumers - ERROR - Cannot consume from create_embedding: connection unavailable; retrying in 5s
+2025-09-23 16:22:38,551 - crm - ERROR - Failed to initialize RabbitMQ connection (consumer_batch_embedding): 
+2025-09-23 16:22:38,551 - crm - ERROR - Failed to initialize RabbitMQ connection (consumer_event_response): 
+2025-09-23 16:22:38,551 - crm - ERROR - Failed to initialize RabbitMQ connection (consumer_delete_embedding): 
+2025-09-23 16:22:38,551 - crm.rabbitmq.consumers - ERROR - Cannot consume from batch_embedding: connection unavailable; retrying in 5s
+2025-09-23 16:22:38,551 - crm.rabbitmq.consumers - ERROR - Cannot consume from event_response: connection unavailable; retrying in 5s
+2025-09-23 16:22:38,552 - crm.rabbitmq.consumers - ERROR - Cannot consume from delete_embedding: connection unavailable; retrying in 5s
+2025-09-23 16:22:53,549 - crm - ERROR - Failed to initialize RabbitMQ connection (consumer_embedding_results): 
+2025-09-23 16:22:53,549 - crm - INFO - Connection not available (consumer_embedding_results), attempting to reinitialize...
+2025-09-23 16:22:53,555 - crm - ERROR - Failed to initialize RabbitMQ connection (consumer_create_embedding): 
+2025-09-23 16:22:53,555 - crm - ERROR - Failed to initialize RabbitMQ connection (consumer_edit_embedding): 
+2025-09-23 16:22:53,555 - crm - INFO - Connection not available (consumer_create_embedding), attempting to reinitialize...
+2025-09-23 16:22:53,555 - crm - INFO - Connection not available (consumer_edit_embedding), attempting to reinitialize...
+2025-09-23 16:22:53,561 - crm - ERROR - Failed to initialize RabbitMQ connection (consumer_delete_embedding): 
+2025-09-23 16:22:53,561 - crm - ERROR - Failed to initialize RabbitMQ connection (consumer_event_response): 
+2025-09-23 16:22:53,561 - crm - INFO - Connection not available (consumer_delete_embedding), attempting to reinitialize...
+2025-09-23 16:22:53,561 - crm - INFO - Connection not available (consumer_event_response), attempting to reinitialize...
+2025-09-23 16:22:53,562 - crm - ERROR - Failed to initialize RabbitMQ connection (consumer_batch_embedding): 
+2025-09-23 16:22:53,563 - crm - INFO - Connection not available (consumer_batch_embedding), attempting to reinitialize...
+2025-09-23 16:23:03,555 - crm - ERROR - Failed to initialize RabbitMQ connection (consumer_embedding_results): 
+2025-09-23 16:23:03,555 - crm.rabbitmq.consumers - ERROR - Cannot consume from embedding_results: connection unavailable; retrying in 5s
+2025-09-23 16:23:03,562 - crm - ERROR - Failed to initialize RabbitMQ connection (consumer_edit_embedding): 
+2025-09-23 16:23:03,563 - crm - ERROR - Failed to initialize RabbitMQ connection (consumer_create_embedding): 
+2025-09-23 16:23:03,563 - crm.rabbitmq.consumers - ERROR - Cannot consume from edit_embedding: connection unavailable; retrying in 5s
+2025-09-23 16:23:03,563 - crm.rabbitmq.consumers - ERROR - Cannot consume from create_embedding: connection unavailable; retrying in 5s
+2025-09-23 16:23:03,570 - crm - ERROR - Failed to initialize RabbitMQ connection (consumer_event_response): 
+2025-09-23 16:23:03,571 - crm.rabbitmq.consumers - ERROR - Cannot consume from event_response: connection unavailable; retrying in 5s
+2025-09-23 16:23:03,572 - crm - ERROR - Failed to initialize RabbitMQ connection (consumer_delete_embedding): 
+2025-09-23 16:23:03,572 - crm - ERROR - Failed to initialize RabbitMQ connection (consumer_batch_embedding): 
+2025-09-23 16:23:03,572 - crm.rabbitmq.consumers - ERROR - Cannot consume from delete_embedding: connection unavailable; retrying in 5s
+2025-09-23 16:23:03,572 - crm.rabbitmq.consumers - ERROR - Cannot consume from batch_embedding: connection unavailable; retrying in 5s
+2025-09-23 16:23:18,562 - crm - ERROR - Failed to initialize RabbitMQ connection (consumer_embedding_results): 
+2025-09-23 16:23:18,563 - crm - INFO - Connection not available (consumer_embedding_results), attempting to reinitialize...
+2025-09-23 16:23:18,570 - crm - ERROR - Failed to initialize RabbitMQ connection (consumer_edit_embedding): 
+2025-09-23 16:23:18,571 - crm - ERROR - Failed to initialize RabbitMQ connection (consumer_create_embedding): 
+2025-09-23 16:23:18,571 - crm - INFO - Connection not available (consumer_edit_embedding), attempting to reinitialize...
+2025-09-23 16:23:18,571 - crm - INFO - Connection not available (consumer_create_embedding), attempting to reinitialize...
+2025-09-23 16:23:18,577 - crm - ERROR - Failed to initialize RabbitMQ connection (consumer_event_response): 
+2025-09-23 16:23:18,577 - crm - INFO - Connection not available (consumer_event_response), attempting to reinitialize...
+2025-09-23 16:23:18,579 - crm - ERROR - Failed to initialize RabbitMQ connection (consumer_batch_embedding): 
+2025-09-23 16:23:18,580 - crm - ERROR - Failed to initialize RabbitMQ connection (consumer_delete_embedding): 
+2025-09-23 16:23:18,580 - crm - INFO - Connection not available (consumer_batch_embedding), attempting to reinitialize...
+2025-09-23 16:23:18,580 - crm - INFO - Connection not available (consumer_delete_embedding), attempting to reinitialize...
+2025-09-23 16:23:28,569 - crm - ERROR - Failed to initialize RabbitMQ connection (consumer_embedding_results): 
+2025-09-23 16:23:28,570 - crm.rabbitmq.consumers - ERROR - Cannot consume from embedding_results: connection unavailable; retrying in 5s
+2025-09-23 16:23:28,578 - crm - ERROR - Failed to initialize RabbitMQ connection (consumer_create_embedding): 
+2025-09-23 16:23:28,579 - crm.rabbitmq.consumers - ERROR - Cannot consume from create_embedding: connection unavailable; retrying in 5s
+2025-09-23 16:23:28,580 - crm - ERROR - Failed to initialize RabbitMQ connection (consumer_edit_embedding): 
+2025-09-23 16:23:28,580 - crm.rabbitmq.consumers - ERROR - Cannot consume from edit_embedding: connection unavailable; retrying in 5s
+2025-09-23 16:23:28,584 - crm - ERROR - Failed to initialize RabbitMQ connection (consumer_event_response): 
+2025-09-23 16:23:28,585 - crm.rabbitmq.consumers - ERROR - Cannot consume from event_response: connection unavailable; retrying in 5s
+2025-09-23 16:23:28,587 - crm - ERROR - Failed to initialize RabbitMQ connection (consumer_batch_embedding): 
+2025-09-23 16:23:28,587 - crm.rabbitmq.consumers - ERROR - Cannot consume from batch_embedding: connection unavailable; retrying in 5s
+2025-09-23 16:23:28,588 - crm - ERROR - Failed to initialize RabbitMQ connection (consumer_delete_embedding): 
+2025-09-23 16:23:28,588 - crm.rabbitmq.consumers - ERROR - Cannot consume from delete_embedding: connection unavailable; retrying in 5s
+2025-09-23 16:23:43,576 - crm - ERROR - Failed to initialize RabbitMQ connection (consumer_embedding_results): 
+2025-09-23 16:23:43,577 - crm - INFO - Connection not available (consumer_embedding_results), attempting to reinitialize...
+2025-09-23 16:23:43,585 - crm - ERROR - Failed to initialize RabbitMQ connection (consumer_create_embedding): 
+2025-09-23 16:23:43,587 - crm - ERROR - Failed to initialize RabbitMQ connection (consumer_edit_embedding): 
+2025-09-23 16:23:43,590 - crm - ERROR - Failed to initialize RabbitMQ connection (consumer_event_response): 
+2025-09-23 16:23:43,593 - crm - ERROR - Failed to initialize RabbitMQ connection (consumer_batch_embedding): 
+2025-09-23 16:23:43,595 - crm - ERROR - Failed to initialize RabbitMQ connection (consumer_delete_embedding): 
+2025-09-23 16:23:43,613 - crm - INFO - Connection not available (consumer_create_embedding), attempting to reinitialize...
+2025-09-23 16:23:43,613 - crm - INFO - Connection not available (consumer_edit_embedding), attempting to reinitialize...
+2025-09-23 16:23:43,614 - crm - INFO - Connection not available (consumer_event_response), attempting to reinitialize...
+2025-09-23 16:23:43,614 - crm - INFO - Connection not available (consumer_batch_embedding), attempting to reinitialize...
+2025-09-23 16:23:43,614 - crm - INFO - Connection not available (consumer_delete_embedding), attempting to reinitialize...
+2025-09-23 16:23:53,619 - crm - ERROR - Failed to initialize RabbitMQ connection (consumer_embedding_results): 
+2025-09-23 16:23:53,619 - crm.rabbitmq.consumers - ERROR - Cannot consume from embedding_results: connection unavailable; retrying in 5s
+2025-09-23 16:23:53,622 - crm - ERROR - Failed to initialize RabbitMQ connection (consumer_edit_embedding): 
+2025-09-23 16:23:53,622 - crm.rabbitmq.consumers - ERROR - Cannot consume from edit_embedding: connection unavailable; retrying in 5s
+2025-09-23 16:23:53,623 - crm - ERROR - Failed to initialize RabbitMQ connection (consumer_batch_embedding): 
+2025-09-23 16:23:53,623 - crm.rabbitmq.consumers - ERROR - Cannot consume from batch_embedding: connection unavailable; retrying in 5s
+2025-09-23 16:23:53,623 - crm - ERROR - Failed to initialize RabbitMQ connection (consumer_create_embedding): 
+2025-09-23 16:23:53,623 - crm.rabbitmq.consumers - ERROR - Cannot consume from create_embedding: connection unavailable; retrying in 5s
+2025-09-23 16:23:53,624 - crm - ERROR - Failed to initialize RabbitMQ connection (consumer_event_response): 
+2025-09-23 16:23:53,624 - crm - ERROR - Failed to initialize RabbitMQ connection (consumer_delete_embedding): 
+2025-09-23 16:23:53,625 - crm.rabbitmq.consumers - ERROR - Cannot consume from event_response: connection unavailable; retrying in 5s
+2025-09-23 16:23:53,625 - crm.rabbitmq.consumers - ERROR - Cannot consume from delete_embedding: connection unavailable; retrying in 5s
+2025-09-23 16:24:08,626 - crm - ERROR - Failed to initialize RabbitMQ connection (consumer_embedding_results): 
+2025-09-23 16:24:08,626 - crm - ERROR - Failed to initialize RabbitMQ connection (consumer_batch_embedding): 
+2025-09-23 16:24:08,626 - crm - INFO - Connection not available (consumer_embedding_results), attempting to reinitialize...
+2025-09-23 16:24:08,626 - crm - INFO - Connection not available (consumer_batch_embedding), attempting to reinitialize...
+2025-09-23 16:24:08,630 - crm - ERROR - Failed to initialize RabbitMQ connection (consumer_edit_embedding): 
+2025-09-23 16:24:08,630 - crm - INFO - Connection not available (consumer_edit_embedding), attempting to reinitialize...
+2025-09-23 16:24:08,631 - crm - ERROR - Failed to initialize RabbitMQ connection (consumer_create_embedding): 
+2025-09-23 16:24:08,631 - crm - ERROR - Failed to initialize RabbitMQ connection (consumer_event_response): 
+2025-09-23 16:24:08,632 - crm - INFO - Connection not available (consumer_create_embedding), attempting to reinitialize...
+2025-09-23 16:24:08,632 - crm - INFO - Connection not available (consumer_event_response), attempting to reinitialize...
+2025-09-23 16:24:08,633 - crm - ERROR - Failed to initialize RabbitMQ connection (consumer_delete_embedding): 
+2025-09-23 16:24:08,634 - crm - INFO - Connection not available (consumer_delete_embedding), attempting to reinitialize...
+2025-09-23 16:24:18,629 - crm - ERROR - Failed to initialize RabbitMQ connection (consumer_batch_embedding): 
+2025-09-23 16:24:18,629 - crm.rabbitmq.consumers - ERROR - Cannot consume from batch_embedding: connection unavailable; retrying in 5s
+2025-09-23 16:24:18,632 - crm - ERROR - Failed to initialize RabbitMQ connection (consumer_embedding_results): 
+2025-09-23 16:24:18,632 - crm.rabbitmq.consumers - ERROR - Cannot consume from embedding_results: connection unavailable; retrying in 5s
+2025-09-23 16:24:18,636 - crm - ERROR - Failed to initialize RabbitMQ connection (consumer_edit_embedding): 
+2025-09-23 16:24:18,636 - crm.rabbitmq.consumers - ERROR - Cannot consume from edit_embedding: connection unavailable; retrying in 5s
+2025-09-23 16:24:18,639 - crm - ERROR - Failed to initialize RabbitMQ connection (consumer_create_embedding): 
+2025-09-23 16:24:18,639 - crm.rabbitmq.consumers - ERROR - Cannot consume from create_embedding: connection unavailable; retrying in 5s
+2025-09-23 16:24:18,640 - crm - ERROR - Failed to initialize RabbitMQ connection (consumer_event_response): 
+2025-09-23 16:24:18,640 - crm.rabbitmq.consumers - ERROR - Cannot consume from event_response: connection unavailable; retrying in 5s
+2025-09-23 16:24:18,641 - crm - ERROR - Failed to initialize RabbitMQ connection (consumer_delete_embedding): 
+2025-09-23 16:24:18,641 - crm.rabbitmq.consumers - ERROR - Cannot consume from delete_embedding: connection unavailable; retrying in 5s
+2025-09-23 16:24:33,636 - crm - ERROR - Failed to initialize RabbitMQ connection (consumer_batch_embedding): 
+2025-09-23 16:24:33,636 - crm - INFO - Connection not available (consumer_batch_embedding), attempting to reinitialize...
+2025-09-23 16:24:33,638 - crm - ERROR - Failed to initialize RabbitMQ connection (consumer_embedding_results): 
+2025-09-23 16:24:33,638 - crm - INFO - Connection not available (consumer_embedding_results), attempting to reinitialize...
+2025-09-23 16:24:33,643 - crm - ERROR - Failed to initialize RabbitMQ connection (consumer_edit_embedding): 
+2025-09-23 16:24:33,643 - crm - INFO - Connection not available (consumer_edit_embedding), attempting to reinitialize...
+2025-09-23 16:24:33,646 - crm - ERROR - Failed to initialize RabbitMQ connection (consumer_event_response): 
+2025-09-23 16:24:33,646 - crm - ERROR - Failed to initialize RabbitMQ connection (consumer_create_embedding): 
+2025-09-23 16:24:33,647 - crm - INFO - Connection not available (consumer_event_response), attempting to reinitialize...
+2025-09-23 16:24:33,647 - crm - INFO - Connection not available (consumer_create_embedding), attempting to reinitialize...
+2025-09-23 16:24:33,647 - crm - ERROR - Failed to initialize RabbitMQ connection (consumer_delete_embedding): 
+2025-09-23 16:24:33,647 - crm - INFO - Connection not available (consumer_delete_embedding), attempting to reinitialize...
+2025-09-23 16:24:43,642 - crm - ERROR - Failed to initialize RabbitMQ connection (consumer_batch_embedding): 
+2025-09-23 16:24:43,643 - crm.rabbitmq.consumers - ERROR - Cannot consume from batch_embedding: connection unavailable; retrying in 5s
+2025-09-23 16:24:43,644 - crm - ERROR - Failed to initialize RabbitMQ connection (consumer_embedding_results): 
+2025-09-23 16:24:43,649 - crm - ERROR - Failed to initialize RabbitMQ connection (consumer_edit_embedding): 
+2025-09-23 16:24:43,654 - crm - ERROR - Failed to initialize RabbitMQ connection (consumer_delete_embedding): 
+2025-09-23 16:24:43,654 - crm - ERROR - Failed to initialize RabbitMQ connection (consumer_event_response): 
+2025-09-23 16:24:43,654 - crm - ERROR - Failed to initialize RabbitMQ connection (consumer_create_embedding): 
+2025-09-23 16:24:43,678 - crm.rabbitmq.consumers - ERROR - Cannot consume from embedding_results: connection unavailable; retrying in 5s
+2025-09-23 16:24:43,678 - crm.rabbitmq.consumers - ERROR - Cannot consume from edit_embedding: connection unavailable; retrying in 5s
+2025-09-23 16:24:43,679 - crm.rabbitmq.consumers - ERROR - Cannot consume from delete_embedding: connection unavailable; retrying in 5s
+2025-09-23 16:24:43,679 - crm.rabbitmq.consumers - ERROR - Cannot consume from event_response: connection unavailable; retrying in 5s
+2025-09-23 16:24:43,679 - crm.rabbitmq.consumers - ERROR - Cannot consume from create_embedding: connection unavailable; retrying in 5s
+2025-09-23 16:24:48,699 - crm - INFO -  [x] RabbitMQ connection initialized (consumer_batch_embedding)
+2025-09-23 16:24:48,699 - crm - INFO -  [x] RabbitMQ connection initialized (consumer_event_response)
+2025-09-23 16:24:48,703 - crm - INFO -  [x] RabbitMQ connection initialized (consumer_delete_embedding)
+2025-09-23 16:24:48,703 - crm - INFO -  [x] RabbitMQ connection initialized (consumer_edit_embedding)
+2025-09-23 16:24:48,703 - crm - INFO -  [x] RabbitMQ connection initialized (consumer_create_embedding)
+2025-09-23 16:24:48,703 - crm - INFO -  [x] RabbitMQ connection initialized (consumer_embedding_results)
+2025-09-23 16:24:48,729 - crm.rabbitmq.consumers - INFO -  [x] Started consuming from queue: batch_embedding
+2025-09-23 16:24:48,742 - crm.rabbitmq.consumers - INFO -  [x] Started consuming from queue: event_response
+2025-09-23 16:24:48,744 - crm.rabbitmq.consumers - INFO -  [x] Started consuming from queue: delete_embedding
+2025-09-23 16:24:48,747 - crm.rabbitmq.consumers - INFO -  [x] Started consuming from queue: create_embedding
+2025-09-23 16:24:48,747 - crm.rabbitmq.consumers - INFO -  [x] Started consuming from queue: embedding_results
+2025-09-23 16:24:48,753 - crm.rabbitmq.consumers - INFO -  [x] Started consuming from queue: edit_embedding
+2025-09-23 16:25:06,346 - crm - INFO - Compose request | status=StatusEnum.QUALIFIED | thread_messages=1 | top_k=6 | first_message='t '
+2025-09-23 16:25:07,073 - crm - INFO - Email compose retrieval: len_context=22014, sources=6
+2025-09-23 16:25:19,451 - crm - INFO - Compose request | status=StatusEnum.QUALIFIED | thread_messages=1 | top_k=6 | first_message='t '
+2025-09-23 16:25:20,126 - crm - INFO - Email compose retrieval: len_context=22014, sources=6
+2025-09-23 17:40:45,675 - crm - WARNING - Shutting down services...
+2025-09-23 17:41:16,329 - crm - INFO - Connecting to MongoDB at: mongodb://192.168.1.72:27017/chat_db
+2025-09-23 17:41:16,334 - crm - INFO - Successfully connected to MongoDB.
+2025-09-23 17:41:17,499 - crm - INFO - Qdrant is reachable at 192.168.1.72:6333
+2025-09-23 17:41:17,562 - crm - INFO - Collection 'CRM_zeta_documents_openai' already exists.
+2025-09-23 17:41:17,564 - crm - INFO - Project root directory: /home/zeta/Documents/zetalabs_projects/crm-ai/crm
+2025-09-23 17:41:17,578 - crm - INFO - Loading LLM provider: openai
+2025-09-23 17:41:18,350 - crm - INFO - OpenAI API KEY: sk-proj-h7... and model name gpt-3.5-turbo
+2025-09-23 17:41:18,350 - crm - INFO - Connecting to OpenAI using model gpt-3.5-turbo ...
+2025-09-23 17:41:18,596 - crm - INFO - Using OpenAI LLM
+2025-09-23 17:41:18,598 - crm - INFO - USE OPENAI: True
+2025-09-23 17:41:18,598 - crm - INFO - [Embedder Init] model=text-embedding-3-small use_openai=True
+2025-09-23 17:41:18,625 - crm - INFO - [Embedder] Using OpenAI model: text-embedding-3-small
+2025-09-23 17:41:18,869 - crm - INFO - Connecting to Ollama at http://192.168.1.72:11434 using model llama3.1 ...
+2025-09-23 17:41:22,365 - crm - INFO - Ollama responded: I'm an artificial intelligence model known as Llama. Llama s...
+2025-09-23 17:41:22,371 - crm - INFO - Starting up the application...
+2025-09-23 17:41:22,416 - crm - INFO - Connecting to Ollama at http://192.168.1.72:11434 using model llama3.1 ...
+2025-09-23 17:41:22,995 - crm - INFO - Ollama responded: I'm an artificial intelligence model known as Llama. Llama s...
+2025-09-23 17:41:23,001 - crm - INFO - Connected to Redis
+2025-09-23 17:41:23,016 - crm.rabbitmq.consumers - INFO -  [x] Started consumer thread for queue: create_embedding
+2025-09-23 17:41:23,016 - crm.rabbitmq.consumers - INFO -  [x] Started consumer thread for queue: batch_embedding
+2025-09-23 17:41:23,017 - crm.rabbitmq.consumers - INFO -  [x] Started consumer thread for queue: edit_embedding
+2025-09-23 17:41:23,018 - crm.rabbitmq.consumers - INFO -  [x] Started consumer thread for queue: delete_embedding
+2025-09-23 17:41:23,019 - crm.rabbitmq.consumers - INFO -  [x] Started consumer thread for queue: embedding_results
+2025-09-23 17:41:23,020 - crm.rabbitmq.consumers - INFO -  [x] Started consumer thread for queue: event_response
+2025-09-23 17:41:23,027 - crm - INFO -  [x] RabbitMQ connection initialized (consumer_delete_embedding)
+2025-09-23 17:41:23,028 - crm - INFO -  [x] RabbitMQ connection initialized (consumer_batch_embedding)
+2025-09-23 17:41:23,028 - crm - INFO -  [x] RabbitMQ connection initialized (consumer_create_embedding)
+2025-09-23 17:41:23,029 - crm - INFO -  [x] RabbitMQ connection initialized (consumer_edit_embedding)
+2025-09-23 17:41:23,031 - crm - INFO -  [x] RabbitMQ connection initialized (consumer_embedding_results)
+2025-09-23 17:41:23,031 - crm - INFO -  [x] RabbitMQ connection initialized (consumer_event_response)
+2025-09-23 17:41:23,037 - crm.rabbitmq.consumers - INFO -  [x] Started consuming from queue: delete_embedding
+2025-09-23 17:41:23,039 - crm.rabbitmq.consumers - INFO -  [x] Started consuming from queue: batch_embedding
+2025-09-23 17:41:23,041 - crm.rabbitmq.consumers - INFO -  [x] Started consuming from queue: create_embedding
+2025-09-23 17:41:23,043 - crm.rabbitmq.consumers - INFO -  [x] Started consuming from queue: edit_embedding
+2025-09-23 17:41:23,043 - crm.rabbitmq.consumers - INFO -  [x] Started consuming from queue: event_response
+2025-09-23 17:41:23,043 - crm.rabbitmq.consumers - INFO -  [x] Started consuming from queue: embedding_results
+2025-10-12 10:01:17,669 - crm - INFO - Connecting to MongoDB at: mongodb://192.168.1.72:27017/chat_db
+2025-10-12 10:01:17,672 - crm - INFO - Successfully connected to MongoDB.
+2025-10-12 10:01:20,392 - crm - ERROR - Waiting for Qdrant (192.168.1.72:6333)... attempt 1/10
+2025-10-12 10:01:24,394 - crm - ERROR - Waiting for Qdrant (192.168.1.72:6333)... attempt 2/10
+2025-10-12 10:01:28,396 - crm - ERROR - Waiting for Qdrant (192.168.1.72:6333)... attempt 3/10
+2025-10-12 10:01:32,398 - crm - ERROR - Waiting for Qdrant (192.168.1.72:6333)... attempt 4/10
+2025-10-12 10:01:36,401 - crm - ERROR - Waiting for Qdrant (192.168.1.72:6333)... attempt 5/10
+2025-10-12 10:01:40,403 - crm - ERROR - Waiting for Qdrant (192.168.1.72:6333)... attempt 6/10
+2025-10-12 10:01:44,404 - crm - ERROR - Waiting for Qdrant (192.168.1.72:6333)... attempt 7/10
+2025-10-12 10:01:48,407 - crm - ERROR - Waiting for Qdrant (192.168.1.72:6333)... attempt 8/10
+2025-10-12 10:01:52,408 - crm - ERROR - Waiting for Qdrant (192.168.1.72:6333)... attempt 9/10
+2025-10-12 10:01:56,410 - crm - ERROR - Waiting for Qdrant (192.168.1.72:6333)... attempt 10/10
