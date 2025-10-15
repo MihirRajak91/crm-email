@@ -1,8 +1,7 @@
-from pydantic import BaseModel, Field, AliasChoices
-from typing import List, Optional
-from uuid import UUID
+from pydantic import BaseModel, Field, AliasChoices, field_validator
+from typing import List, Optional, Dict, Any
 
- 
+
 class ResourceEvent(BaseModel):
     """
     Description: Pydantic model for RabbitMQ resource events containing file upload and processing information
@@ -28,6 +27,8 @@ class ResourceEvent(BaseModel):
     """
     event: str = None
     resource_id: str = Field(alias="id")
+    service_name: str
+    extraction_type: str
     user_id: str
     organization_id: str
     file_name: str = Field(alias="resource_name")
@@ -40,6 +41,33 @@ class ResourceEvent(BaseModel):
     role_id: Optional[str] = None
     user_ids: Optional[List[str]] = None
     organization_schema: Optional[str] = None
+
+
+class EmbeddingResultEvent(BaseModel):
+    """
+    Description: Pydantic model for RabbitMQ embedding result events
+
+    args:
+        task_id (str): Original task identifier
+        status (str): Result status ('completed', 'failed', 'processing')
+        result (Optional[Dict[str, Any]]): Embedding result data
+        error (Optional[str]): Error message if failed
+        processing_time (Optional[float]): Time taken to process in seconds
+        created_at (Optional[str]): Result creation timestamp
+        metadata (Optional[Dict[str, Any]]): Additional metadata
+
+    returns:
+        EmbeddingResultEvent: Validated result event instance
+    """
+    task_id: str
+    status: str  # 'completed', 'failed', 'processing'
+    result: Optional[Dict[str, Any]] = None
+    error: Optional[str] = None
+    processing_time: Optional[float] = None
+    created_at: Optional[str] = None
+    metadata: Optional[Dict[str, Any]] = Field(default_factory=dict)
+    service_name: str
+
 class UpdatePermissionsEvent(BaseModel):
     """
     Description: Pydantic model for RabbitMQ permission update events with new field structure
@@ -93,19 +121,54 @@ class EmbeddingEvent(BaseModel):
 
 
 class EmbeddingResponse(BaseModel):
-    """Flexible embedding response supporting success and failure payloads."""
+    """
+    Description: Pydantic model for RabbitMQ embedding response events
 
+    args:
+        event (str): Event type, should be 'embedding_response'
+        resource_id (str): Resource identifier for the embedding request
+        embeddings (List[List[float]]): List of embedding vectors
+        chunks (Dict[str, Dict[str, Any]]): Mapping of chunk id to payload data
+        status (str): Response status ('success', 'failed')
+
+    returns:
+        EmbeddingResponse: Validated embedding response instance
+    """
     event: str = "embedding_response"
+    resource_id: str = Field(alias="id")
+    embeddings: List[List[float]] = Field(default_factory=list)
+    chunks: Dict[str, Dict[str, Any]] = Field(default_factory=dict)
+    status: str = "success"  # 'success', 'failed'
+    service_name: str
     task_id: Optional[str] = None
-    type: Optional[str] = None
-    status: Optional[str] = "success"
-    resource_id: Optional[str] = Field(default=None, validation_alias=AliasChoices("id", "resource_id"))
     user_id: Optional[str] = None
     organization_id: Optional[str] = None
-    embeddings: Optional[List[List[float]]] = None
-    chunks: Optional[List[str]] = None
-    file_name: Optional[str] = Field(default=None, validation_alias=AliasChoices("resource_name", "file_name"))
-    file_path: Optional[str] = Field(default=None, validation_alias=AliasChoices("resource_path", "file_path"))
     model_name: Optional[str] = None
     processing_time: Optional[float] = None
-    error_message: Optional[str] = Field(default=None, validation_alias=AliasChoices("error_message", "error"))
+    created_at: Optional[str] = None
+    metadata: Optional[Dict[str, Any]] = Field(default_factory=dict)
+    file_name: Optional[str] = Field(default=None, validation_alias=AliasChoices("resource_name", "file_name"))
+    file_path: Optional[str] = Field(default=None, validation_alias=AliasChoices("resource_path", "file_path"))
+    error: Optional[str] = Field(default=None, validation_alias=AliasChoices("error", "error_message"))
+
+    @field_validator("chunks", mode="before")
+    @classmethod
+    def normalize_chunks(cls, value):
+        """
+        Accept list-based payloads for backward compatibility by converting them into
+        an indexed dictionary structure.
+        """
+        if value is None:
+            return {}
+        if isinstance(value, dict):
+            return value
+        if isinstance(value, list):
+            normalized: Dict[str, Dict[str, Any]] = {}
+            for index, chunk in enumerate(value):
+                key = str(index)
+                if isinstance(chunk, dict):
+                    normalized[key] = chunk
+                else:
+                    normalized[key] = {"text": chunk}
+            return normalized
+        raise TypeError("chunks must be a dictionary or list-compatible payload")

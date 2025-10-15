@@ -30,7 +30,11 @@ class TestEmbeddingResponse(unittest.TestCase):
             [0.2, 0.3, 0.4, 0.5, 0.6],  # Vector 2
             [0.3, 0.4, 0.5, 0.6, 0.7],  # Vector 3
         ]
-        self.sample_chunks = ["chunk one", "chunk two", "chunk three"]
+        self.sample_chunks = {
+            "0": {"text": "chunk one"},
+            "1": {"text": "chunk two"},
+            "2": {"text": "chunk three"},
+        }
 
         self.sample_resource_id = "test-resource-123"
 
@@ -47,7 +51,8 @@ class TestEmbeddingResponse(unittest.TestCase):
             resource_path="/test/path/test_document.pdf",
             model_name="text-embedding-3-small",
             processing_time=0.045,
-            status="success"
+            status="success",
+            service_name="embedding_service",
         )
 
         # Verify all fields
@@ -60,6 +65,7 @@ class TestEmbeddingResponse(unittest.TestCase):
         self.assertEqual(response.processing_time, 0.045)
         self.assertEqual(response.status, "success")
         self.assertEqual(response.event, "embedding_response")
+        self.assertEqual(response.service_name, "embedding_service")
 
     @unittest.skipUnless(EMBEDDING_RESPONSE_AVAILABLE, "EmbeddingResponse requires pydantic")
     def test_embedding_response_minimal_data(self):
@@ -71,7 +77,8 @@ class TestEmbeddingResponse(unittest.TestCase):
             embeddings=self.sample_embeddings,
             chunks=self.sample_chunks,
             resource_name="doc.pdf",
-            resource_path="/path/doc.pdf"
+            resource_path="/path/doc.pdf",
+            service_name="embedding_service",
         )
 
         # Verify minimal required fields are set
@@ -107,6 +114,7 @@ class TestEmbeddingResponse(unittest.TestCase):
         self.assertEqual(len(response_dict["embeddings"]), 3)
         self.assertEqual(len(response_dict["chunks"]), 3)
         self.assertEqual(response_dict["id"], self.sample_resource_id)
+        self.assertEqual(response_dict["service_name"], "embedding_service")
 
     @unittest.skipUnless(EMBEDDING_RESPONSE_AVAILABLE, "EmbeddingResponse requires pydantic")
     def test_embedding_response_validation(self):
@@ -117,9 +125,10 @@ class TestEmbeddingResponse(unittest.TestCase):
             user_id="user",
             organization_id="org",
             embeddings=self.sample_embeddings,  # 3 embeddings
-            chunks=self.sample_chunks[0:2],      # 2 chunks - different count is allowed
+            chunks={"0": {"text": "chunk one"}, "1": {"text": "chunk two"}},      # 2 chunks - different count is allowed
             resource_name="doc.pdf",
-            resource_path="/path/doc.pdf"
+            resource_path="/path/doc.pdf",
+            service_name="embedding_service",
         )
 
         # Should still be valid - validation happens at processing time
@@ -138,11 +147,12 @@ class TestEmbeddingResponse(unittest.TestCase):
             resource_name="doc.pdf",
             resource_path="/path/doc.pdf",
             status="error",
-            error_message="Embedding service unavailable"
+            error="Embedding service unavailable",
+            service_name="embedding_service",
         )
 
         self.assertEqual(response.status, "error")
-        self.assertEqual(response.error_message, "Embedding service unavailable")
+        self.assertEqual(response.error, "Embedding service unavailable")
         self.assertEqual(len(response.embeddings), 0)  # No embeddings on error
 
     @unittest.skip("Requires full application setup for Qdrant integration")
@@ -157,7 +167,8 @@ class TestEmbeddingResponse(unittest.TestCase):
             embeddings=self.sample_embeddings,
             chunks=self.sample_chunks,
             resource_name="doc.pdf",
-            resource_path="/path/doc.pdf"
+            resource_path="/path/doc.pdf",
+            service_name="embedding_service",
         )
 
         # In real scenario, this would test the Qdrant storage
@@ -195,7 +206,8 @@ class TestEmbeddingResponseWorkflow(unittest.TestCase):
             "resource_path": "/documents/document.pdf",
             "model_name": "text-embedding-3-small",
             "processing_time": 0.042,
-            "status": "success"
+            "status": "success",
+            "service_name": "embedding_service",
         }
 
         print("1. Received embedding response message:")
@@ -241,7 +253,13 @@ class TestEmbeddingResponseWorkflow(unittest.TestCase):
 
         # 5. Prepare data structure for storage
         storage_payloads = []
-        for i, (chunk, embedding) in enumerate(zip(embedding_response.chunks, embedding_response.embeddings)):
+        chunk_items = list(embedding_response.chunks.items())
+        chunk_items.sort(key=lambda item: int(item[0]) if str(item[0]).isdigit() else item[0])
+        for i, ((chunk_key, chunk_payload), embedding) in enumerate(zip(chunk_items, embedding_response.embeddings)):
+            if isinstance(chunk_payload, dict):
+                chunk_text = chunk_payload.get("text") or chunk_payload.get("content") or ""
+            else:
+                chunk_text = str(chunk_payload)
             payload = {
                 "resource_id": embedding_response.resource_id,
                 "user_id": embedding_response.user_id,
@@ -249,7 +267,8 @@ class TestEmbeddingResponseWorkflow(unittest.TestCase):
                 "chunk_id": i,
                 "chunk_index": i,
                 "total_chunks": len(embedding_response.chunks),
-                "text": chunk,
+                "chunk_key": chunk_key,
+                "text": chunk_text,
                 "file_name": embedding_response.file_name,
                 "file_path": embedding_response.file_path,
                 "embedding_model": embedding_response.model_name or "unknown",

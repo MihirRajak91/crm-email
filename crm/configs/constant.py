@@ -9,13 +9,14 @@ returns:
 """
 
 EXCHANGE_NAME = 'embedder_exchange'
+EMBEDDING_TASK_QUEUE = 'embedding_tasks'
 
 RABBITMQ_CONSUMER_QUEUES = [
     "create_embedding",
     "batch_embedding",
     "edit_embedding",
     "delete_embedding",
-    "embedding_results",
+    "crm_ai_embedding_results",
     "event_response",
 ]
 

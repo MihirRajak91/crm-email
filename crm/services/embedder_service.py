@@ -16,7 +16,7 @@ import uuid
 
 from crm.utils.logger import logger
 from crm.core.settings import get_settings
-from crm.configs.constant import EXCHANGE_NAME
+from crm.configs.constant import EXCHANGE_NAME, EMBEDDING_TASK_QUEUE
 from crm.rabbitmq.producers import rabbitmq_producer
 
 # Reuse existing document loaders
@@ -39,7 +39,7 @@ class EmbeddingTaskService:
         file_path: Optional[str] = None,
         user_id: Optional[str] = None,
         organization_id: Optional[str] = None,
-        routing_key: str = "embedding-task",
+        routing_key: str = EMBEDDING_TASK_QUEUE,
     ) -> Dict[str, Any]:
         """Publish a `create_embedding` task for the given text chunks."""
         if not texts:
@@ -86,7 +86,7 @@ class EmbeddingTaskService:
         file_name: Optional[str] = None,
         user_id: Optional[str] = None,
         organization_id: Optional[str] = None,
-        routing_key: str = "embedding-task",
+        routing_key: str = EMBEDDING_TASK_QUEUE,
     ) -> Dict[str, Any]:
         """
         Extract text from a document (pdf/docx/html) and queue an embedding task.
@@ -116,4 +116,3 @@ class EmbeddingTaskService:
             organization_id=organization_id,
             routing_key=routing_key,
         )
-

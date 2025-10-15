@@ -8,7 +8,7 @@ from crm.utils.embedder import embedder
 from crm.core.settings import get_settings
 from crm.utils.logger import logger
 from crm.rabbitmq.producers import rabbitmq_producer
-from crm.configs.constant import EXCHANGE_NAME
+from crm.configs.constant import EXCHANGE_NAME, EMBEDDING_TASK_QUEUE
 import uuid
 
 router = APIRouter()
@@ -149,7 +149,7 @@ async def upload_pdf(file: UploadFile = File(...)):
             "chunks": len(texts),
             "extraction_method": extraction_method,
         })
-        rabbitmq_producer(message, EXCHANGE_NAME, routing_key="embedding-task")
+        rabbitmq_producer(message, EXCHANGE_NAME, routing_key=EMBEDDING_TASK_QUEUE)
 
         logger.info("Upload accepted and task queued", extra={
             "task_id": task_id,

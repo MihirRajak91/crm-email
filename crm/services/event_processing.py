@@ -7,8 +7,13 @@ from concurrent.futures import ThreadPoolExecutor
 
 from crm.services.delete_file_services import DeleteFileServices
 from crm.services.pipeline_service import PipelineService
-from crm.models.rabbitmq_event_models import ResourceEvent, UpdatePermissionsEvent, EmbeddingResponse, EmbeddingEvent
-from crm.configs.constant import UPDATE_PERMISSION_EVENT, EXCHANGE_NAME
+from crm.models.rabbitmq_event_models import (
+    ResourceEvent,
+    UpdatePermissionsEvent,
+    EmbeddingResponse,
+    EmbeddingEvent,
+)
+from crm.configs.constant import UPDATE_PERMISSION_EVENT, EXCHANGE_NAME, EMBEDDING_TASK_QUEUE
 from crm.utils.logger import logger
 from crm.rabbitmq.producers import rabbitmq_producer
 from crm.core.settings import get_settings
@@ -188,12 +193,15 @@ class EventProcessor:
                     extra={
                         "resource_id": resource_id,
                         "status": embedding_response.status,
-                        "error": embedding_response.error_message,
+                        "error": embedding_response.error,
                     },
                 )
                 return False
+            chunk_items = list(embedding_response.chunks.items())
+            chunk_items.sort(key=lambda item: int(item[0]) if str(item[0]).isdigit() else item[0])
+            chunk_payloads = [item[1] for item in chunk_items]
 
-            if not embedding_response.embeddings or not embedding_response.chunks:
+            if not embedding_response.embeddings or not chunk_payloads:
                 logger.warning(
                     "Embedding response missing embeddings or chunks; skipping persistence",
                     extra={
@@ -202,14 +210,13 @@ class EventProcessor:
                     },
                 )
                 return False
-
-            if len(embedding_response.embeddings) != len(embedding_response.chunks):
+            if len(embedding_response.embeddings) != len(chunk_payloads):
                 logger.warning(
                     "Embedding/chunk count mismatch",
                     extra={
                         "resource_id": resource_id,
                         "embeddings": len(embedding_response.embeddings),
-                        "chunks": len(embedding_response.chunks),
+                        "chunks": len(chunk_payloads),
                     },
                 )
 
@@ -242,24 +249,32 @@ class EventProcessor:
         try:
             store = QdrantEmbeddingStore()
             embeddings = embedding_response.embeddings or []
-            chunks = embedding_response.chunks or []
+            chunk_items = list(embedding_response.chunks.items())
+            chunk_items.sort(key=lambda item: int(item[0]) if str(item[0]).isdigit() else item[0])
+            chunk_payloads = [item[1] for item in chunk_items]
             resource_id = embedding_response.resource_id
-
+            chunk_texts: List[str] = []
+            for chunk in chunk_payloads:
+                if isinstance(chunk, dict):
+                    text_value = chunk.get("text") or chunk.get("content") or ""
+                else:
+                    text_value = str(chunk)
+                chunk_texts.append(text_value)
             logger.info(
                 "Received embeddings to persist",
                 extra={
                     "resource_id": resource_id,
                     "raw_embeddings": len(embeddings),
-                    "raw_chunks": len(chunks),
+                    "raw_chunks": len(chunk_texts),
                 },
             )
             # Filter out invalid vectors
             valid_embeddings = []
             valid_chunks = []
-            for emb, ch in zip(embeddings, chunks):
+            for emb, chunk_text in zip(embeddings, chunk_texts):
                 if emb and all(isinstance(x, (int, float)) for x in emb):
                     valid_embeddings.append(emb)
-                    valid_chunks.append(ch)
+                    valid_chunks.append(chunk_text)
 
             meta = {
                 "user_id": embedding_response.user_id,
@@ -269,6 +284,7 @@ class EventProcessor:
                 "status": embedding_response.status or "success",
                 "file_name": embedding_response.file_name,
                 "file_path": embedding_response.file_path,
+                "service_name": embedding_response.service_name,
             }
 
             logger.info(
@@ -337,7 +353,7 @@ class EventProcessor:
             rabbitmq_producer(
                 message=embedding_event.dict(),
                 exchange_name=EXCHANGE_NAME,
-                routing_key="embedding"
+                routing_key=EMBEDDING_TASK_QUEUE
             )
 
             logger.info(f"Successfully published {event_type} event for resource {resource_id} with {len(texts)} texts")
