@@ -1,5 +1,7 @@
 from contextlib import asynccontextmanager
 from fastapi import FastAPI
+from prometheus_client import start_http_server
+
 from crm.configs.redis_config import redis_service
 from crm.services.ollama_services import load_llm
 from crm.utils.logger import logger
@@ -31,15 +33,31 @@ async def lifespan(crm: FastAPI):
     except Exception as e:
         logger.error(f"Redis connection failed during startup but continuing: {e}")
 
-    # Start RabbitMQ consumers only if enabled to avoid importing optional stacks
     settings = get_settings()
+
+    if settings.METRICS_PORT:
+        try:
+            start_http_server(settings.METRICS_PORT)
+            logger.info("CRM metrics server started on port %s", settings.METRICS_PORT)
+        except OSError as exc:
+            logger.error(f"Failed to start CRM metrics server: {exc}")
+
+    # Start RabbitMQ consumers only if enabled to avoid importing optional stacks
+    chat_worker = None
     if settings.ENABLE_RABBITMQ_CONSUMERS:
         try:
             from crm.rabbitmq.consumers import rabbitmq_consumer
+            from crm.queues.chat_worker import start_chat_worker
             rabbitmq_consumer.start(RABBITMQ_CONSUMER_QUEUES)
+            chat_worker = start_chat_worker()
         except Exception as e:
             logger.error(f"Failed to start RabbitMQ consumers: {e}")
 
     yield
 
     logger.warning("Shutting down services...")
+    if chat_worker:
+        try:
+            chat_worker.stop()
+        except Exception as exc:
+            logger.error(f"Error stopping CRM chat worker: {exc}")

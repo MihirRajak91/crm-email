@@ -87,6 +87,7 @@ class Settings(BaseSettings):
     RABBITMQ_USER: str = Field(default="guest", description="RabbitMQ user")
     RABBITMQ_PASSWORD: str = Field(default="guest", description="RabbitMQ password")
     ENABLE_RABBITMQ_CONSUMERS: bool = Field(default=True, description="Start RabbitMQ consumers on startup")
+    METRICS_PORT: int = Field(default=9102, description="Prometheus metrics port (0 disables)")
 
     # -- Service configurations
     LLM_PROVIDER: LLMProvider = Field(default="openai", description="LLM provider for the application")

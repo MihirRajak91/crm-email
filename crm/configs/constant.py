@@ -10,6 +10,8 @@ returns:
 
 EXCHANGE_NAME = 'embedder_exchange'
 EMBEDDING_TASK_QUEUE = 'embedding_tasks'
+CRM_CHAT_REQUEST_QUEUE = "crm.chat.requests"
+CRM_CHAT_RESPONSE_QUEUE = "crm.chat.responses"
 
 RABBITMQ_CONSUMER_QUEUES = [
     "create_embedding",

@@ -21,6 +21,7 @@ Requirements
 - Poetry (dependency management)
 - Docker (to run Qdrant locally)
 - OpenAI API key if using OpenAI for LLM/embeddings
+- Optional: Prometheus (scrape metrics exposed on `METRICS_PORT`, default `9102`)
 
 Quick Start
 1) Install dependencies

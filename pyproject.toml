@@ -49,6 +49,7 @@ python-docx = "^1.2.0"
 weasyprint = "^66.0"
 pillow = "^11.3.0"
 python-multipart = "^0.0.20"
+prometheus-client = "^0.20.0"
 
 [tool.poetry.group.dev.dependencies]
 # For development, debugging, notebooks
